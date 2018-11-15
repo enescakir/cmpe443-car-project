@@ -1,0 +1,12 @@
+--cpu=Cortex-M4.fp
+".\objects\main.o"
+".\objects\gpio.o"
+".\objects\joystick.o"
+".\objects\pwm.o"
+".\objects\hidden.o"
+".\objects\led.o"
+".\objects\startup_lpc407x_8x_177x_8x.o"
+".\objects\system_lpc407x_8x_177x_8x.o"
+--library_type=microlib --ro-base 0x00000000 --entry 0x00000000 --rw-base 0x10000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\LAB_004.map" -o .\Objects\LAB_004.axf
