@@ -7,8 +7,8 @@
 #include "Library/LED.h"
 
 void init() {
-		LED_Init();
-		LED_Controller(1,0,1,0);
+	LED_Init();
+	LED_Controller(ON, OFF, ON, OFF);
 }
 
 //When code start, LED should be turned off.
@@ -18,13 +18,13 @@ void init() {
 //When you press the LEFT button of the Joystick, LED will blink (10 times in a second).
 //When you press the RIGHT button of the Joystick, LED will blink (2 times in a second).
 void update() {
-	
+
 }
- 
+
 int main() {
-    init();
- 
-    while(1) {
-        update();
-    }
+	init();
+
+	while (1) {
+		update();
+	}
 }
