@@ -42,8 +42,12 @@ typedef struct {
 
 void PWM_Init(void);
 
-void PWM_Cycle_Rate(uint32_t period_In_Cycles);
+void PWM0_Cycle_Rate(uint32_t period_In_Cycles);
 
-void PWM_Write(uint32_t T_ON);
+void PWM0_Write(uint32_t T_ON);
+
+void PWM1_Cycle_Rate(uint32_t period_In_Cycles);
+
+void PWM1_Write(uint32_t T_ON);
 
 #endif

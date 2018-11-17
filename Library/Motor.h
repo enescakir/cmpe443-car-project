@@ -14,6 +14,9 @@
 #define IOCON_PWM0_2_ADDRESS 0x4002C088
 #define IOCON_PWM0_2 *((volatile uint32_t *) IOCON_PWM0_2_ADDRESS)
 
+#define IOCON_PWM0_6_ADDRESS 0x4002C0AC
+#define IOCON_PWM0_6 *((volatile uint32_t *) IOCON_PWM0_6_ADDRESS)
+
 
 // IN1 PIN
 #define IN1_PORT PORT1
@@ -31,8 +34,17 @@
 #define IN4_PORT PORT0
 #define IN4_MASK ((uint32_t) 1 << 21)
 
+typedef enum {
+	FORWARD  = 2,
+	BACKWARD  = 1,
+	STOP = 0
+} Motor_Direction;
+
+
+void Motor_Init(void);
 void Motor_PWM_Init(void);
 void Motor_Direction_Init(void);
-void Motor_Controller(int in1, int in2, int in3, int in4);
+void Motor_Handle(int direction, GPIO_TypeDef *MOTOR1, uint32_t MASK1, GPIO_TypeDef *MOTOR2, uint32_t MASK2);
+void Motor_Controller(int motor1, int motor2, int speed);
 
 #endif

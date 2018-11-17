@@ -3,6 +3,12 @@
 
 #include "LPC407x_8x_177x_8x.h"
 #include "GPIO.h"
+#include "PWM.h"
+
+// PWM FOR LEDS
+// DEFINING THE FUNCTIONALITIES IN IOCONS
+#define IOCON_PWM1_2_ADDRESS 0x4002C0D0
+#define IOCON_PWM1_2 *((volatile uint32_t *) IOCON_PWM1_2_ADDRESS)
 
 // Front-left LED
 #define LED1_PORT PORT0
@@ -17,13 +23,12 @@
 #define LED3_MASK ((uint32_t) 1 << 30)
 
 // Back-left LED
-#define LED4_PORT PORT1
+#define LED4_PORT PORT1   
 #define LED4_MASK ((uint32_t) 1 << 31)
 
 typedef enum {
-	OFF   = 0,
-	ON    = 1,
-	BLINK = 2
+	OFF = 0,
+	ON  = 1
 } LED_Mode;
 
 void LED_Init(void);
@@ -34,10 +39,8 @@ void LED_On(GPIO_TypeDef *PORT, uint32_t MASK);
 
 void LED_Off(GPIO_TypeDef *PORT, uint32_t MASK);
 
-void LED_Blink(GPIO_TypeDef *PORT, uint32_t MASK);
-
 void LED_Handle(GPIO_TypeDef *PORT, uint32_t MASK, uint8_t value);
 
-void LED_Controller(int frontLeft, int frontRight, int backRight, int backLeft);
+void LED_Controller(int frontLeft, int frontRight, int backRight, int backLeft, int isBlink);
 
 #endif
