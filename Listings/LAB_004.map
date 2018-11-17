@@ -4,55 +4,46 @@ Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
 
 Section Cross References
 
+    main.o(i.init) refers to joystick.o(i.Joystick_Init) for Joystick_Init
     main.o(i.init) refers to led.o(i.LED_Init) for LED_Init
     main.o(i.init) refers to led.o(i.LED_Controller) for LED_Controller
+    main.o(i.init) refers to motor.o(i.Motor_PWM_Init) for Motor_PWM_Init
+    main.o(i.init) refers to motor.o(i.Motor_Direction_Init) for Motor_Direction_Init
+    main.o(i.init) refers to motor.o(i.Motor_Controller) for Motor_Controller
+    main.o(i.init) refers to pwm.o(i.PWM_Write) for PWM_Write
     main.o(i.main) refers to main.o(i.init) for init
     main.o(i.main) refers to main.o(i.update) for update
+    main.o(i.update) refers to joystick.o(i.Joystick_Center_Pressed) for Joystick_Center_Pressed
+    main.o(i.update) refers to pwm.o(i.PWM_Write) for PWM_Write
+    main.o(i.update) refers to led.o(i.LED_Controller) for LED_Controller
+    main.o(i.update) refers to motor.o(i.Motor_Controller) for Motor_Controller
+    main.o(i.update) refers to joystick.o(i.Joystick_Up_Pressed) for Joystick_Up_Pressed
+    main.o(i.update) refers to joystick.o(i.Joystick_Down_Pressed) for Joystick_Down_Pressed
+    main.o(i.update) refers to joystick.o(i.Joystick_Left_Pressed) for Joystick_Left_Pressed
+    main.o(i.update) refers to joystick.o(i.Joystick_Right_Pressed) for Joystick_Right_Pressed
     joystick.o(i.Joystick_Center_Pressed) refers to gpio.o(i.GPIO_PIN_Read) for GPIO_PIN_Read
     joystick.o(i.Joystick_Down_Pressed) refers to gpio.o(i.GPIO_PIN_Read) for GPIO_PIN_Read
     joystick.o(i.Joystick_Init) refers to gpio.o(i.GPIO_DIR_Write) for GPIO_DIR_Write
     joystick.o(i.Joystick_Left_Pressed) refers to gpio.o(i.GPIO_PIN_Read) for GPIO_PIN_Read
     joystick.o(i.Joystick_Right_Pressed) refers to gpio.o(i.GPIO_PIN_Read) for GPIO_PIN_Read
     joystick.o(i.Joystick_Up_Pressed) refers to gpio.o(i.GPIO_PIN_Read) for GPIO_PIN_Read
-    pwm.o(i.PWM_Cycle_Rate) refers to hidden.o(i.PWM_MR0_Enable) for PWM_MR0_Enable
-    pwm.o(i.PWM_Init) refers to hidden.o(i.PWM_Timer_Reset) for PWM_Timer_Reset
-    pwm.o(i.PWM_Init) refers to hidden.o(i.PWM_MR0_Reset) for PWM_MR0_Reset
-    pwm.o(i.PWM_Init) refers to hidden.o(i.PWM_MR0_Enable) for PWM_MR0_Enable
-    pwm.o(i.PWM_Init) refers to hidden.o(i.PWM_Timer_Enable) for PWM_Timer_Enable
-    pwm.o(i.PWM_Init) refers to pwm.o(i.PWM_Write) for PWM_Write
-    pwm.o(i.PWM_Write) refers to hidden.o(i.PWM_MRL_Enable) for PWM_MRL_Enable
-    led.o(i.LED1_Init) refers to gpio.o(i.GPIO_DIR_Write) for GPIO_DIR_Write
-    led.o(i.LED1_Off) refers to gpio.o(i.GPIO_PIN_Write) for GPIO_PIN_Write
-    led.o(i.LED1_On) refers to gpio.o(i.GPIO_PIN_Write) for GPIO_PIN_Write
-    led.o(i.LED2_Init) refers to gpio.o(i.GPIO_DIR_Write) for GPIO_DIR_Write
-    led.o(i.LED2_Off) refers to gpio.o(i.GPIO_PIN_Write) for GPIO_PIN_Write
-    led.o(i.LED2_On) refers to gpio.o(i.GPIO_PIN_Write) for GPIO_PIN_Write
-    led.o(i.LED3_Init) refers to gpio.o(i.GPIO_DIR_Write) for GPIO_DIR_Write
-    led.o(i.LED3_Off) refers to gpio.o(i.GPIO_PIN_Write) for GPIO_PIN_Write
-    led.o(i.LED3_On) refers to gpio.o(i.GPIO_PIN_Write) for GPIO_PIN_Write
-    led.o(i.LED4_Init) refers to gpio.o(i.GPIO_DIR_Write) for GPIO_DIR_Write
-    led.o(i.LED4_Off) refers to gpio.o(i.GPIO_PIN_Write) for GPIO_PIN_Write
-    led.o(i.LED4_On) refers to gpio.o(i.GPIO_PIN_Write) for GPIO_PIN_Write
-    led.o(i.LED_Controller) refers to led.o(i.LED1_On) for LED1_On
-    led.o(i.LED_Controller) refers to led.o(i.LED1_Off) for LED1_Off
-    led.o(i.LED_Controller) refers to led.o(i.LED2_On) for LED2_On
-    led.o(i.LED_Controller) refers to led.o(i.LED2_Off) for LED2_Off
-    led.o(i.LED_Controller) refers to led.o(i.LED3_On) for LED3_On
-    led.o(i.LED_Controller) refers to led.o(i.LED3_Off) for LED3_Off
-    led.o(i.LED_Controller) refers to led.o(i.LED4_On) for LED4_On
-    led.o(i.LED_Controller) refers to led.o(i.LED4_Off) for LED4_Off
-    led.o(i.LED_Init) refers to led.o(i.LED1_Init) for LED1_Init
-    led.o(i.LED_Init) refers to led.o(i.LED2_Init) for LED2_Init
-    led.o(i.LED_Init) refers to led.o(i.LED3_Init) for LED3_Init
-    led.o(i.LED_Init) refers to led.o(i.LED4_Init) for LED4_Init
-    led.o(i.LED_OFF) refers to led.o(i.LED1_Off) for LED1_Off
-    led.o(i.LED_OFF) refers to led.o(i.LED2_Off) for LED2_Off
-    led.o(i.LED_OFF) refers to led.o(i.LED3_Off) for LED3_Off
-    led.o(i.LED_OFF) refers to led.o(i.LED4_Off) for LED4_Off
-    led.o(i.LED_ON) refers to led.o(i.LED1_On) for LED1_On
-    led.o(i.LED_ON) refers to led.o(i.LED2_On) for LED2_On
-    led.o(i.LED_ON) refers to led.o(i.LED3_On) for LED3_On
-    led.o(i.LED_ON) refers to led.o(i.LED4_On) for LED4_On
+    pwm.o(i.PWM_Write) refers to dfltui.o(.text) for __aeabi_ui2d
+    pwm.o(i.PWM_Write) refers to ddiv.o(.text) for __aeabi_ddiv
+    pwm.o(i.PWM_Write) refers to dmul.o(.text) for __aeabi_dmul
+    pwm.o(i.PWM_Write) refers to dfixui.o(.text) for __aeabi_d2uiz
+    led.o(i.LED_Blink) refers to gpio.o(i.GPIO_PIN_Write) for GPIO_PIN_Write
+    led.o(i.LED_Controller) refers to led.o(i.LED_Handle) for LED_Handle
+    led.o(i.LED_Handle) refers to led.o(i.LED_On) for LED_On
+    led.o(i.LED_Handle) refers to led.o(i.LED_Off) for LED_Off
+    led.o(i.LED_Handle) refers to led.o(i.LED_Blink) for LED_Blink
+    led.o(i.LED_Init) refers to led.o(i.LED_Set) for LED_Set
+    led.o(i.LED_Off) refers to gpio.o(i.GPIO_PIN_Write) for GPIO_PIN_Write
+    led.o(i.LED_On) refers to gpio.o(i.GPIO_PIN_Write) for GPIO_PIN_Write
+    led.o(i.LED_Set) refers to gpio.o(i.GPIO_DIR_Write) for GPIO_DIR_Write
+    motor.o(i.Motor_Controller) refers to gpio.o(i.GPIO_PIN_Write) for GPIO_PIN_Write
+    motor.o(i.Motor_Direction_Init) refers to gpio.o(i.GPIO_DIR_Write) for GPIO_DIR_Write
+    motor.o(i.Motor_Direction_Init) refers to motor.o(i.Motor_Controller) for Motor_Controller
+    motor.o(i.Motor_PWM_Init) refers to pwm.o(i.PWM_Write) for PWM_Write
     startup_lpc407x_8x_177x_8x.o(RESET) refers to startup_lpc407x_8x_177x_8x.o(STACK) for __initial_sp
     startup_lpc407x_8x_177x_8x.o(RESET) refers to startup_lpc407x_8x_177x_8x.o(.text) for Reset_Handler
     startup_lpc407x_8x_177x_8x.o(.text) refers to system_lpc407x_8x_177x_8x.o(i.SystemInit) for SystemInit
@@ -67,6 +58,14 @@ Section Cross References
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    dmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ddiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ddiv.o(.text) refers to depilogue.o(.text) for _double_round
+    dfltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfltui.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dfixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixui.o(.text) refers to llushr.o(.text) for __aeabi_llsr
     entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
     entry2.o(.ARM.Collect$$$$00002712) refers to startup_lpc407x_8x_177x_8x.o(STACK) for __initial_sp
     entry2.o(__vectab_stack_and_reset_area) refers to startup_lpc407x_8x_177x_8x.o(STACK) for __initial_sp
@@ -74,6 +73,8 @@ Section Cross References
     entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
     entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(i.main) for main
     entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(i.main) for main
+    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
     init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
 
 
@@ -84,44 +85,38 @@ Removing Unused input sections from the image.
     Removing main.o(.rev16_text), (4 bytes).
     Removing main.o(.revsh_text), (4 bytes).
     Removing main.o(.rrx_text), (6 bytes).
+    Removing main.o(.data), (16 bytes).
     Removing gpio.o(.rev16_text), (4 bytes).
     Removing gpio.o(.revsh_text), (4 bytes).
     Removing gpio.o(.rrx_text), (6 bytes).
-    Removing gpio.o(i.GPIO_PIN_Read), (10 bytes).
     Removing joystick.o(.rev16_text), (4 bytes).
     Removing joystick.o(.revsh_text), (4 bytes).
     Removing joystick.o(.rrx_text), (6 bytes).
-    Removing joystick.o(i.Joystick_Center_Pressed), (24 bytes).
-    Removing joystick.o(i.Joystick_Down_Pressed), (24 bytes).
-    Removing joystick.o(i.Joystick_Init), (60 bytes).
-    Removing joystick.o(i.Joystick_Left_Pressed), (24 bytes).
-    Removing joystick.o(i.Joystick_Right_Pressed), (24 bytes).
-    Removing joystick.o(i.Joystick_Up_Pressed), (24 bytes).
     Removing pwm.o(.rev16_text), (4 bytes).
     Removing pwm.o(.revsh_text), (4 bytes).
     Removing pwm.o(.rrx_text), (6 bytes).
-    Removing pwm.o(i.PWM_Cycle_Rate), (10 bytes).
-    Removing pwm.o(i.PWM_Init), (26 bytes).
-    Removing pwm.o(i.PWM_Write), (36 bytes).
-    Removing hidden.o(.rev16_text), (4 bytes).
-    Removing hidden.o(.revsh_text), (4 bytes).
-    Removing hidden.o(.rrx_text), (6 bytes).
-    Removing hidden.o(i.PWM_MR0_Enable), (20 bytes).
-    Removing hidden.o(i.PWM_MR0_Reset), (12 bytes).
-    Removing hidden.o(i.PWM_MRL_Enable), (20 bytes).
-    Removing hidden.o(i.PWM_Timer_Enable), (12 bytes).
-    Removing hidden.o(i.PWM_Timer_Reset), (12 bytes).
+    Removing pwm.o(i.PWM_Cycle_Rate), (32 bytes).
+    Removing pwm.o(i.PWM_Init), (2 bytes).
     Removing led.o(.rev16_text), (4 bytes).
     Removing led.o(.revsh_text), (4 bytes).
     Removing led.o(.rrx_text), (6 bytes).
-    Removing led.o(i.LED_OFF), (20 bytes).
-    Removing led.o(i.LED_ON), (20 bytes).
+    Removing motor.o(.rev16_text), (4 bytes).
+    Removing motor.o(.revsh_text), (4 bytes).
+    Removing motor.o(.rrx_text), (6 bytes).
+    Removing timer.o(.rev16_text), (4 bytes).
+    Removing timer.o(.revsh_text), (4 bytes).
+    Removing timer.o(.rrx_text), (6 bytes).
+    Removing wait.o(.rev16_text), (4 bytes).
+    Removing wait.o(.revsh_text), (4 bytes).
+    Removing wait.o(.rrx_text), (6 bytes).
+    Removing wait.o(i.wait), (20 bytes).
+    Removing wait.o(i.waitMicroseconds), (18 bytes).
     Removing startup_lpc407x_8x_177x_8x.o(HEAP), (0 bytes).
     Removing system_lpc407x_8x_177x_8x.o(.rev16_text), (4 bytes).
     Removing system_lpc407x_8x_177x_8x.o(.revsh_text), (4 bytes).
     Removing system_lpc407x_8x_177x_8x.o(.rrx_text), (6 bytes).
 
-39 unused section(s) (total 476 bytes) removed from the image.
+33 unused section(s) (total 214 bytes) removed from the image.
 
 ==============================================================================
 
@@ -132,29 +127,41 @@ Image Symbol Table
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
     RESET                                    0x00000000   Section      228  startup_lpc407x_8x_177x_8x.o(RESET)
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
     Library\GPIO.c                           0x00000000   Number         0  gpio.o ABSOLUTE
-    Library\Hidden.c                         0x00000000   Number         0  hidden.o ABSOLUTE
     Library\Joystick.c                       0x00000000   Number         0  joystick.o ABSOLUTE
     Library\LED.c                            0x00000000   Number         0  led.o ABSOLUTE
+    Library\Motor.c                          0x00000000   Number         0  motor.o ABSOLUTE
     Library\PWM.c                            0x00000000   Number         0  pwm.o ABSOLUTE
+    Library\Timer.c                          0x00000000   Number         0  timer.o ABSOLUTE
+    Library\Wait.c                           0x00000000   Number         0  wait.o ABSOLUTE
     Library\\GPIO.c                          0x00000000   Number         0  gpio.o ABSOLUTE
-    Library\\Hidden.c                        0x00000000   Number         0  hidden.o ABSOLUTE
     Library\\Joystick.c                      0x00000000   Number         0  joystick.o ABSOLUTE
     Library\\LED.c                           0x00000000   Number         0  led.o ABSOLUTE
+    Library\\Motor.c                         0x00000000   Number         0  motor.o ABSOLUTE
     Library\\PWM.c                           0x00000000   Number         0  pwm.o ABSOLUTE
+    Library\\Timer.c                         0x00000000   Number         0  timer.o ABSOLUTE
+    Library\\Wait.c                          0x00000000   Number         0  wait.o ABSOLUTE
     RTE\Device\LPC4088FET208\startup_LPC407x_8x_177x_8x.s 0x00000000   Number         0  startup_lpc407x_8x_177x_8x.o ABSOLUTE
     RTE\Device\LPC4088FET208\system_LPC407x_8x_177x_8x.c 0x00000000   Number         0  system_lpc407x_8x_177x_8x.o ABSOLUTE
     RTE\\Device\\LPC4088FET208\\system_LPC407x_8x_177x_8x.c 0x00000000   Number         0  system_lpc407x_8x_177x_8x.o ABSOLUTE
@@ -175,33 +182,45 @@ Image Symbol Table
     __lit__00000000                          0x000000f4   Data           4  entry2.o(.ARM.Collect$$$$00002712)
     .text                                    0x000000f8   Section       36  startup_lpc407x_8x_177x_8x.o(.text)
     $v0                                      0x000000f8   Number         0  startup_lpc407x_8x_177x_8x.o(.text)
-    .text                                    0x0000011c   Section       36  init.o(.text)
-    i.GPIO_DIR_Write                         0x00000140   Section        0  gpio.o(i.GPIO_DIR_Write)
-    i.GPIO_PIN_Write                         0x00000152   Section        0  gpio.o(i.GPIO_PIN_Write)
-    i.LED1_Init                              0x00000164   Section        0  led.o(i.LED1_Init)
-    i.LED1_Off                               0x00000178   Section        0  led.o(i.LED1_Off)
-    i.LED1_On                                0x0000018c   Section        0  led.o(i.LED1_On)
-    i.LED2_Init                              0x000001a0   Section        0  led.o(i.LED2_Init)
-    i.LED2_Off                               0x000001b4   Section        0  led.o(i.LED2_Off)
-    i.LED2_On                                0x000001c8   Section        0  led.o(i.LED2_On)
-    i.LED3_Init                              0x000001dc   Section        0  led.o(i.LED3_Init)
-    i.LED3_Off                               0x000001f0   Section        0  led.o(i.LED3_Off)
-    i.LED3_On                                0x00000204   Section        0  led.o(i.LED3_On)
-    i.LED4_Init                              0x00000218   Section        0  led.o(i.LED4_Init)
-    i.LED4_Off                               0x0000022c   Section        0  led.o(i.LED4_Off)
-    i.LED4_On                                0x00000240   Section        0  led.o(i.LED4_On)
-    i.LED_Controller                         0x00000254   Section        0  led.o(i.LED_Controller)
-    i.LED_Init                               0x00000294   Section        0  led.o(i.LED_Init)
-    i.__scatterload_copy                     0x000002a8   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x000002b6   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x000002b8   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i.init                                   0x000002c6   Section        0  main.o(i.init)
-    i.main                                   0x000002da   Section        0  main.o(i.main)
-    i.update                                 0x000002e6   Section        0  main.o(i.update)
+    .text                                    0x0000011c   Section        0  dmul.o(.text)
+    .text                                    0x00000200   Section        0  ddiv.o(.text)
+    .text                                    0x000002de   Section        0  dfltui.o(.text)
+    .text                                    0x000002f8   Section        0  iusefp.o(.text)
+    i.__scatterload_null                     0x000002f8   Section        2  handlers.o(i.__scatterload_null)
     .ARM.__at_0x02FC                         0x000002fc   Section        4  startup_lpc407x_8x_177x_8x.o(.ARM.__at_0x02FC)
-    i.SystemCoreClockUpdate                  0x00000300   Section        0  system_lpc407x_8x_177x_8x.o(i.SystemCoreClockUpdate)
-    i.SystemInit                             0x000005d4   Section        0  system_lpc407x_8x_177x_8x.o(i.SystemInit)
-    i.fpu_init                               0x000006c0   Section        0  system_lpc407x_8x_177x_8x.o(i.fpu_init)
+    .text                                    0x00000300   Section        0  dfixui.o(.text)
+    .text                                    0x00000332   Section        0  llushr.o(.text)
+    .text                                    0x00000352   Section        0  depilogue.o(.text)
+    .text                                    0x0000040c   Section       36  init.o(.text)
+    .text                                    0x00000430   Section        0  llshl.o(.text)
+    i.GPIO_DIR_Write                         0x0000044e   Section        0  gpio.o(i.GPIO_DIR_Write)
+    i.GPIO_PIN_Read                          0x00000460   Section        0  gpio.o(i.GPIO_PIN_Read)
+    i.GPIO_PIN_Write                         0x0000046a   Section        0  gpio.o(i.GPIO_PIN_Write)
+    i.Joystick_Center_Pressed                0x0000047c   Section        0  joystick.o(i.Joystick_Center_Pressed)
+    i.Joystick_Down_Pressed                  0x00000494   Section        0  joystick.o(i.Joystick_Down_Pressed)
+    i.Joystick_Init                          0x000004ac   Section        0  joystick.o(i.Joystick_Init)
+    i.Joystick_Left_Pressed                  0x000004e8   Section        0  joystick.o(i.Joystick_Left_Pressed)
+    i.Joystick_Right_Pressed                 0x00000500   Section        0  joystick.o(i.Joystick_Right_Pressed)
+    i.Joystick_Up_Pressed                    0x00000518   Section        0  joystick.o(i.Joystick_Up_Pressed)
+    i.LED_Blink                              0x00000530   Section        0  led.o(i.LED_Blink)
+    i.LED_Controller                         0x00000544   Section        0  led.o(i.LED_Controller)
+    i.LED_Handle                             0x0000058c   Section        0  led.o(i.LED_Handle)
+    i.LED_Init                               0x000005bc   Section        0  led.o(i.LED_Init)
+    i.LED_Off                                0x000005f0   Section        0  led.o(i.LED_Off)
+    i.LED_On                                 0x00000602   Section        0  led.o(i.LED_On)
+    i.LED_Set                                0x00000614   Section        0  led.o(i.LED_Set)
+    i.Motor_Controller                       0x00000628   Section        0  motor.o(i.Motor_Controller)
+    i.Motor_Direction_Init                   0x000006a8   Section        0  motor.o(i.Motor_Direction_Init)
+    i.Motor_PWM_Init                         0x000006e8   Section        0  motor.o(i.Motor_PWM_Init)
+    i.PWM_Write                              0x0000077c   Section        0  pwm.o(i.PWM_Write)
+    i.SystemCoreClockUpdate                  0x000007f8   Section        0  system_lpc407x_8x_177x_8x.o(i.SystemCoreClockUpdate)
+    i.SystemInit                             0x00000acc   Section        0  system_lpc407x_8x_177x_8x.o(i.SystemInit)
+    i.__scatterload_copy                     0x00000bb8   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_zeroinit                 0x00000bc6   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.fpu_init                               0x00000bd4   Section        0  system_lpc407x_8x_177x_8x.o(i.fpu_init)
+    i.init                                   0x00000c24   Section        0  main.o(i.init)
+    i.main                                   0x00000c56   Section        0  main.o(i.main)
+    i.update                                 0x00000c62   Section        0  main.o(i.update)
     .data                                    0x10000000   Section       16  system_lpc407x_8x_177x_8x.o(.data)
     STACK                                    0x10000010   Section     1024  startup_lpc407x_8x_177x_8x.o(STACK)
 
@@ -209,7 +228,7 @@ Image Symbol Table
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
-    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$VFPi3$EXTD16$VFPS$VFMA$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$VFPi3$EXTD16$VFPS$VFMA$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
     __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
     __Vectors                                0x00000000   Data           4  startup_lpc407x_8x_177x_8x.o(RESET)
     __cpp_initialize__aeabi_                  - Undefined Weak Reference
@@ -276,35 +295,50 @@ Image Symbol Table
     USBActivity_IRQHandler                   0x00000113   Thumb Code     0  startup_lpc407x_8x_177x_8x.o(.text)
     USB_IRQHandler                           0x00000113   Thumb Code     0  startup_lpc407x_8x_177x_8x.o(.text)
     WDT_IRQHandler                           0x00000113   Thumb Code     0  startup_lpc407x_8x_177x_8x.o(.text)
-    __scatterload                            0x0000011d   Thumb Code    28  init.o(.text)
-    __scatterload_rt2                        0x0000011d   Thumb Code     0  init.o(.text)
-    GPIO_DIR_Write                           0x00000141   Thumb Code    18  gpio.o(i.GPIO_DIR_Write)
-    GPIO_PIN_Write                           0x00000153   Thumb Code    18  gpio.o(i.GPIO_PIN_Write)
-    LED1_Init                                0x00000165   Thumb Code    14  led.o(i.LED1_Init)
-    LED1_Off                                 0x00000179   Thumb Code    16  led.o(i.LED1_Off)
-    LED1_On                                  0x0000018d   Thumb Code    14  led.o(i.LED1_On)
-    LED2_Init                                0x000001a1   Thumb Code    14  led.o(i.LED2_Init)
-    LED2_Off                                 0x000001b5   Thumb Code    16  led.o(i.LED2_Off)
-    LED2_On                                  0x000001c9   Thumb Code    14  led.o(i.LED2_On)
-    LED3_Init                                0x000001dd   Thumb Code    14  led.o(i.LED3_Init)
-    LED3_Off                                 0x000001f1   Thumb Code    16  led.o(i.LED3_Off)
-    LED3_On                                  0x00000205   Thumb Code    14  led.o(i.LED3_On)
-    LED4_Init                                0x00000219   Thumb Code    14  led.o(i.LED4_Init)
-    LED4_Off                                 0x0000022d   Thumb Code    16  led.o(i.LED4_Off)
-    LED4_On                                  0x00000241   Thumb Code    14  led.o(i.LED4_On)
-    LED_Controller                           0x00000255   Thumb Code    64  led.o(i.LED_Controller)
-    LED_Init                                 0x00000295   Thumb Code    20  led.o(i.LED_Init)
-    __scatterload_copy                       0x000002a9   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x000002b7   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x000002b9   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    init                                     0x000002c7   Thumb Code    20  main.o(i.init)
-    main                                     0x000002db   Thumb Code    12  main.o(i.main)
-    update                                   0x000002e7   Thumb Code     2  main.o(i.update)
-    SystemCoreClockUpdate                    0x00000301   Thumb Code   696  system_lpc407x_8x_177x_8x.o(i.SystemCoreClockUpdate)
-    SystemInit                               0x000005d5   Thumb Code   220  system_lpc407x_8x_177x_8x.o(i.SystemInit)
-    fpu_init                                 0x000006c1   Thumb Code    62  system_lpc407x_8x_177x_8x.o(i.fpu_init)
-    Region$$Table$$Base                      0x00000710   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00000730   Number         0  anon$$obj.o(Region$$Table)
+    __aeabi_dmul                             0x0000011d   Thumb Code   228  dmul.o(.text)
+    __aeabi_ddiv                             0x00000201   Thumb Code   222  ddiv.o(.text)
+    __aeabi_ui2d                             0x000002df   Thumb Code    26  dfltui.o(.text)
+    __I$use$fp                               0x000002f9   Thumb Code     0  iusefp.o(.text)
+    __scatterload_null                       0x000002f9   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __aeabi_d2uiz                            0x00000301   Thumb Code    50  dfixui.o(.text)
+    __aeabi_llsr                             0x00000333   Thumb Code    32  llushr.o(.text)
+    _ll_ushift_r                             0x00000333   Thumb Code     0  llushr.o(.text)
+    _double_round                            0x00000353   Thumb Code    30  depilogue.o(.text)
+    _double_epilogue                         0x00000371   Thumb Code   156  depilogue.o(.text)
+    __scatterload                            0x0000040d   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x0000040d   Thumb Code     0  init.o(.text)
+    __aeabi_llsl                             0x00000431   Thumb Code    30  llshl.o(.text)
+    _ll_shift_l                              0x00000431   Thumb Code     0  llshl.o(.text)
+    GPIO_DIR_Write                           0x0000044f   Thumb Code    18  gpio.o(i.GPIO_DIR_Write)
+    GPIO_PIN_Read                            0x00000461   Thumb Code    10  gpio.o(i.GPIO_PIN_Read)
+    GPIO_PIN_Write                           0x0000046b   Thumb Code    18  gpio.o(i.GPIO_PIN_Write)
+    Joystick_Center_Pressed                  0x0000047d   Thumb Code    20  joystick.o(i.Joystick_Center_Pressed)
+    Joystick_Down_Pressed                    0x00000495   Thumb Code    20  joystick.o(i.Joystick_Down_Pressed)
+    Joystick_Init                            0x000004ad   Thumb Code    54  joystick.o(i.Joystick_Init)
+    Joystick_Left_Pressed                    0x000004e9   Thumb Code    20  joystick.o(i.Joystick_Left_Pressed)
+    Joystick_Right_Pressed                   0x00000501   Thumb Code    20  joystick.o(i.Joystick_Right_Pressed)
+    Joystick_Up_Pressed                      0x00000519   Thumb Code    20  joystick.o(i.Joystick_Up_Pressed)
+    LED_Blink                                0x00000531   Thumb Code    18  led.o(i.LED_Blink)
+    LED_Controller                           0x00000545   Thumb Code    68  led.o(i.LED_Controller)
+    LED_Handle                               0x0000058d   Thumb Code    48  led.o(i.LED_Handle)
+    LED_Init                                 0x000005bd   Thumb Code    48  led.o(i.LED_Init)
+    LED_Off                                  0x000005f1   Thumb Code    18  led.o(i.LED_Off)
+    LED_On                                   0x00000603   Thumb Code    18  led.o(i.LED_On)
+    LED_Set                                  0x00000615   Thumb Code    20  led.o(i.LED_Set)
+    Motor_Controller                         0x00000629   Thumb Code   124  motor.o(i.Motor_Controller)
+    Motor_Direction_Init                     0x000006a9   Thumb Code    58  motor.o(i.Motor_Direction_Init)
+    Motor_PWM_Init                           0x000006e9   Thumb Code   132  motor.o(i.Motor_PWM_Init)
+    PWM_Write                                0x0000077d   Thumb Code   112  pwm.o(i.PWM_Write)
+    SystemCoreClockUpdate                    0x000007f9   Thumb Code   696  system_lpc407x_8x_177x_8x.o(i.SystemCoreClockUpdate)
+    SystemInit                               0x00000acd   Thumb Code   220  system_lpc407x_8x_177x_8x.o(i.SystemInit)
+    __scatterload_copy                       0x00000bb9   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_zeroinit                   0x00000bc7   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    fpu_init                                 0x00000bd5   Thumb Code    62  system_lpc407x_8x_177x_8x.o(i.fpu_init)
+    init                                     0x00000c25   Thumb Code    50  main.o(i.init)
+    main                                     0x00000c57   Thumb Code    12  main.o(i.main)
+    update                                   0x00000c63   Thumb Code   192  main.o(i.update)
+    Region$$Table$$Base                      0x00000d24   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00000d44   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x10000000   Data           4  system_lpc407x_8x_177x_8x.o(.data)
     PeripheralClock                          0x10000004   Data           4  system_lpc407x_8x_177x_8x.o(.data)
     EMCClock                                 0x10000008   Data           4  system_lpc407x_8x_177x_8x.o(.data)
@@ -319,66 +353,80 @@ Memory Map of the image
 
   Image Entry point : 0x000000f9
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00000740, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00000d54, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000730, Max: 0xffffffff, ABSOLUTE)
-
-    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x00000000   0x00000000   0x000000e4   Data   RO          395    RESET               startup_lpc407x_8x_177x_8x.o
-    0x000000e4   0x000000e4   0x00000000   Code   RO          445  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x000000e4   0x000000e4   0x00000004   Code   RO          448    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x000000e8   0x000000e8   0x00000004   Code   RO          451    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x000000ec   0x000000ec   0x00000000   Code   RO          453    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x000000ec   0x000000ec   0x00000000   Code   RO          455    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x000000ec   0x000000ec   0x00000008   Code   RO          456    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x000000f4   0x000000f4   0x00000000   Code   RO          458    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x000000f4   0x000000f4   0x00000000   Code   RO          460    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x000000f4   0x000000f4   0x00000004   Code   RO          449    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
-    0x000000f8   0x000000f8   0x00000024   Code   RO          397  * .text               startup_lpc407x_8x_177x_8x.o
-    0x0000011c   0x0000011c   0x00000024   Code   RO          462    .text               mc_w.l(init.o)
-    0x00000140   0x00000140   0x00000012   Code   RO           90    i.GPIO_DIR_Write    gpio.o
-    0x00000152   0x00000152   0x00000012   Code   RO           92    i.GPIO_PIN_Write    gpio.o
-    0x00000164   0x00000164   0x00000014   Code   RO          279    i.LED1_Init         led.o
-    0x00000178   0x00000178   0x00000014   Code   RO          280    i.LED1_Off          led.o
-    0x0000018c   0x0000018c   0x00000014   Code   RO          281    i.LED1_On           led.o
-    0x000001a0   0x000001a0   0x00000014   Code   RO          282    i.LED2_Init         led.o
-    0x000001b4   0x000001b4   0x00000014   Code   RO          283    i.LED2_Off          led.o
-    0x000001c8   0x000001c8   0x00000014   Code   RO          284    i.LED2_On           led.o
-    0x000001dc   0x000001dc   0x00000014   Code   RO          285    i.LED3_Init         led.o
-    0x000001f0   0x000001f0   0x00000014   Code   RO          286    i.LED3_Off          led.o
-    0x00000204   0x00000204   0x00000014   Code   RO          287    i.LED3_On           led.o
-    0x00000218   0x00000218   0x00000014   Code   RO          288    i.LED4_Init         led.o
-    0x0000022c   0x0000022c   0x00000014   Code   RO          289    i.LED4_Off          led.o
-    0x00000240   0x00000240   0x00000014   Code   RO          290    i.LED4_On           led.o
-    0x00000254   0x00000254   0x00000040   Code   RO          291    i.LED_Controller    led.o
-    0x00000294   0x00000294   0x00000014   Code   RO          292    i.LED_Init          led.o
-    0x000002a8   0x000002a8   0x0000000e   Code   RO          466    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x000002b6   0x000002b6   0x00000002   Code   RO          467    i.__scatterload_null  mc_w.l(handlers.o)
-    0x000002b8   0x000002b8   0x0000000e   Code   RO          468    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x000002c6   0x000002c6   0x00000014   Code   RO            4    i.init              main.o
-    0x000002da   0x000002da   0x0000000c   Code   RO            5    i.main              main.o
-    0x000002e6   0x000002e6   0x00000002   Code   RO            6    i.update            main.o
-    0x000002e8   0x000002e8   0x00000014   PAD
-    0x000002fc   0x000002fc   0x00000004   Code   RO          396    .ARM.__at_0x02FC    startup_lpc407x_8x_177x_8x.o
-    0x00000300   0x00000300   0x000002d4   Code   RO          406    i.SystemCoreClockUpdate  system_lpc407x_8x_177x_8x.o
-    0x000005d4   0x000005d4   0x000000ec   Code   RO          407    i.SystemInit        system_lpc407x_8x_177x_8x.o
-    0x000006c0   0x000006c0   0x00000050   Code   RO          408    i.fpu_init          system_lpc407x_8x_177x_8x.o
-    0x00000710   0x00000710   0x00000020   Data   RO          464    Region$$Table       anon$$obj.o
-
-
-    Execution Region ER_RW (Exec base: 0x10000000, Load base: 0x00000730, Size: 0x00000010, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000d44, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x10000000   0x00000730   0x00000010   Data   RW          409    .data               system_lpc407x_8x_177x_8x.o
+    0x00000000   0x00000000   0x000000e4   Data   RO          386    RESET               startup_lpc407x_8x_177x_8x.o
+    0x000000e4   0x000000e4   0x00000000   Code   RO          436  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x000000e4   0x000000e4   0x00000004   Code   RO          447    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x000000e8   0x000000e8   0x00000004   Code   RO          450    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x000000ec   0x000000ec   0x00000000   Code   RO          452    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x000000ec   0x000000ec   0x00000000   Code   RO          454    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x000000ec   0x000000ec   0x00000008   Code   RO          455    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x000000f4   0x000000f4   0x00000000   Code   RO          457    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x000000f4   0x000000f4   0x00000000   Code   RO          459    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x000000f4   0x000000f4   0x00000004   Code   RO          448    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x000000f8   0x000000f8   0x00000024   Code   RO          388  * .text               startup_lpc407x_8x_177x_8x.o
+    0x0000011c   0x0000011c   0x000000e4   Code   RO          439    .text               mf_w.l(dmul.o)
+    0x00000200   0x00000200   0x000000de   Code   RO          441    .text               mf_w.l(ddiv.o)
+    0x000002de   0x000002de   0x0000001a   Code   RO          443    .text               mf_w.l(dfltui.o)
+    0x000002f8   0x000002f8   0x00000000   Code   RO          463    .text               mc_w.l(iusefp.o)
+    0x000002f8   0x000002f8   0x00000002   Code   RO          473    i.__scatterload_null  mc_w.l(handlers.o)
+    0x000002fa   0x000002fa   0x00000002   PAD
+    0x000002fc   0x000002fc   0x00000004   Code   RO          387    .ARM.__at_0x02FC    startup_lpc407x_8x_177x_8x.o
+    0x00000300   0x00000300   0x00000032   Code   RO          445    .text               mf_w.l(dfixui.o)
+    0x00000332   0x00000332   0x00000020   Code   RO          461    .text               mc_w.l(llushr.o)
+    0x00000352   0x00000352   0x000000ba   Code   RO          464    .text               mf_w.l(depilogue.o)
+    0x0000040c   0x0000040c   0x00000024   Code   RO          466    .text               mc_w.l(init.o)
+    0x00000430   0x00000430   0x0000001e   Code   RO          468    .text               mc_w.l(llshl.o)
+    0x0000044e   0x0000044e   0x00000012   Code   RO           93    i.GPIO_DIR_Write    gpio.o
+    0x00000460   0x00000460   0x0000000a   Code   RO           94    i.GPIO_PIN_Read     gpio.o
+    0x0000046a   0x0000046a   0x00000012   Code   RO           95    i.GPIO_PIN_Write    gpio.o
+    0x0000047c   0x0000047c   0x00000018   Code   RO          132    i.Joystick_Center_Pressed  joystick.o
+    0x00000494   0x00000494   0x00000018   Code   RO          133    i.Joystick_Down_Pressed  joystick.o
+    0x000004ac   0x000004ac   0x0000003c   Code   RO          134    i.Joystick_Init     joystick.o
+    0x000004e8   0x000004e8   0x00000018   Code   RO          135    i.Joystick_Left_Pressed  joystick.o
+    0x00000500   0x00000500   0x00000018   Code   RO          136    i.Joystick_Right_Pressed  joystick.o
+    0x00000518   0x00000518   0x00000018   Code   RO          137    i.Joystick_Up_Pressed  joystick.o
+    0x00000530   0x00000530   0x00000012   Code   RO          231    i.LED_Blink         led.o
+    0x00000542   0x00000542   0x00000002   PAD
+    0x00000544   0x00000544   0x00000048   Code   RO          232    i.LED_Controller    led.o
+    0x0000058c   0x0000058c   0x00000030   Code   RO          233    i.LED_Handle        led.o
+    0x000005bc   0x000005bc   0x00000034   Code   RO          234    i.LED_Init          led.o
+    0x000005f0   0x000005f0   0x00000012   Code   RO          235    i.LED_Off           led.o
+    0x00000602   0x00000602   0x00000012   Code   RO          236    i.LED_On            led.o
+    0x00000614   0x00000614   0x00000014   Code   RO          237    i.LED_Set           led.o
+    0x00000628   0x00000628   0x00000080   Code   RO          294    i.Motor_Controller  motor.o
+    0x000006a8   0x000006a8   0x00000040   Code   RO          295    i.Motor_Direction_Init  motor.o
+    0x000006e8   0x000006e8   0x00000094   Code   RO          296    i.Motor_PWM_Init    motor.o
+    0x0000077c   0x0000077c   0x0000007c   Code   RO          191    i.PWM_Write         pwm.o
+    0x000007f8   0x000007f8   0x000002d4   Code   RO          397    i.SystemCoreClockUpdate  system_lpc407x_8x_177x_8x.o
+    0x00000acc   0x00000acc   0x000000ec   Code   RO          398    i.SystemInit        system_lpc407x_8x_177x_8x.o
+    0x00000bb8   0x00000bb8   0x0000000e   Code   RO          472    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00000bc6   0x00000bc6   0x0000000e   Code   RO          474    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00000bd4   0x00000bd4   0x00000050   Code   RO          399    i.fpu_init          system_lpc407x_8x_177x_8x.o
+    0x00000c24   0x00000c24   0x00000032   Code   RO            4    i.init              main.o
+    0x00000c56   0x00000c56   0x0000000c   Code   RO            5    i.main              main.o
+    0x00000c62   0x00000c62   0x000000c0   Code   RO            6    i.update            main.o
+    0x00000d22   0x00000d22   0x00000002   PAD
+    0x00000d24   0x00000d24   0x00000020   Data   RO          470    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_ZI (Exec base: 0x10000010, Load base: 0x00000740, Size: 0x00000400, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x10000000, Load base: 0x00000d44, Size: 0x00000010, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x10000010        -       0x00000400   Zero   RW          393    STACK               startup_lpc407x_8x_177x_8x.o
+    0x10000000   0x00000d44   0x00000010   Data   RW          400    .data               system_lpc407x_8x_177x_8x.o
+
+
+    Execution Region ER_ZI (Exec base: 0x10000010, Load base: 0x00000d54, Size: 0x00000400, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x10000010        -       0x00000400   Zero   RW          384    STACK               startup_lpc407x_8x_177x_8x.o
 
 
 ==============================================================================
@@ -388,16 +436,19 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-        36          0          0          0          0       2266   gpio.o
-       324         64          0          0          0       6352   led.o
-        34          0          0          0          0       5771   main.o
-        40         12        228          0       1024       1072   startup_lpc407x_8x_177x_8x.o
-      1040         62          0         16          0       4524   system_lpc407x_8x_177x_8x.o
+        46          0          0          0          0       2878   gpio.o
+       180         26          0          0          0       3205   joystick.o
+       246          8          0          0          0       4254   led.o
+       254          0          0          0          0       5963   main.o
+       340         26          0          0          0       1791   motor.o
+       124         12          0          0          0        600   pwm.o
+        40         12        228          0       1024       1104   startup_lpc407x_8x_177x_8x.o
+      1040         62          0         16          0       4604   system_lpc407x_8x_177x_8x.o
 
     ----------------------------------------------------------------------
-      1494        138        260         16       1024      19985   Object Totals
+      2274        146        260         16       1024      24399   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        20          0          0          0          0          0   (incl. Padding)
+         4          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -413,19 +464,28 @@ Image component sizes
          8          4          0          0          0          0   entry9a.o
         30          0          0          0          0          0   handlers.o
         36          8          0          0          0         68   init.o
+         0          0          0          0          0          0   iusefp.o
+        30          0          0          0          0         68   llshl.o
+        32          0          0          0          0         68   llushr.o
+       222          0          0          0          0        100   ddiv.o
+       186          0          0          0          0        176   depilogue.o
+        50          0          0          0          0         76   dfixui.o
+        26          0          0          0          0         76   dfltui.o
+       228          0          0          0          0         96   dmul.o
 
     ----------------------------------------------------------------------
-        86         16          0          0          0         68   Library Totals
-         0          0          0          0          0          0   (incl. Padding)
+       862         16          0          0          0        728   Library Totals
+         2          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
 
-        86         16          0          0          0         68   mc_w.l
+       148         16          0          0          0        204   mc_w.l
+       712          0          0          0          0        524   mf_w.l
 
     ----------------------------------------------------------------------
-        86         16          0          0          0         68   Library Totals
+       862         16          0          0          0        728   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -434,15 +494,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1580        154        260         16       1024      18357   Grand Totals
-      1580        154        260         16       1024      18357   ELF Image Totals
-      1580        154        260         16          0          0   ROM Totals
+      3136        162        260         16       1024      22719   Grand Totals
+      3136        162        260         16       1024      22719   ELF Image Totals
+      3136        162        260         16          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 1840 (   1.80kB)
+    Total RO  Size (Code + RO Data)                 3396 (   3.32kB)
     Total RW  Size (RW Data + ZI Data)              1040 (   1.02kB)
-    Total ROM Size (Code + RO Data + RW Data)       1856 (   1.81kB)
+    Total ROM Size (Code + RO Data + RW Data)       3412 (   3.33kB)
 
 ==============================================================================
 

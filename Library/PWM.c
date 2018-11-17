@@ -1,14 +1,32 @@
 #include "PWM.h"
 
+
 void PWM_Init() {
-    //Change the function of the pin in here:
+/*    //Change the function of the pin in here:
+	
+		//PORT1_2 P30 in BOARD
+		uint32_t value = IOCON_PWM0_1;
+		value &=~7;
+		value |=3;
+		IOCON_PWM0_1= value;
 
-    //Turn on PWM
-
+		//PORT1_3 P29 in BOARD
+		uint32_t value1 = IOCON_PWM0_2;
+		value1 &=~7;
+		value1 |=3;
+		IOCON_PWM0_2= value1;
+				
+		// POWER THE PWM0 FROM PCONP 
+		// base address for PCONP = 0x400FC0C4
+		PCONP |= 1<<5;
+		PCONP |= 1<<6;
+	
     //Enable PWM output for corresponding pin.
-
+		PWM0 -> PCR |= 1 << 9;  //ENABLE PWM0_1 OUTPUT
+		PWM0 -> PCR |= 1 << 10;  //ENABLE PWM0_2 OUTPUT
+	
     PWM0->TCR = 1 << 1;
-
+		
     //Configure MR0 register for giving pulse every 20 ms.
     PWM0->MR0 = (PERIPHERAL_CLOCK_FREQUENCY / 1000000) * 20 * 1000;
 
@@ -18,7 +36,7 @@ void PWM_Init() {
 
     PWM0->TCR = (1 << 0 | 1 << 3);
 
-    PWM_Write(0);
+    PWM_Write(0);*/
 }
 
 void PWM_Cycle_Rate(uint32_t period_In_Cycles) {
@@ -33,13 +51,15 @@ void PWM_Write(uint32_t T_ON) {
         T_ON = 100;
     }
 
-    //Write a formula to calculate the match register for P30 (P1_2) pin.
-    //Store the value in T_ON variable (T_ON = ???)
-
+		T_ON = PWM0->MR0 *(T_ON / 100.0);
+				
     if (T_ON == PWM0->MR0) {
         T_ON++;
     }
     PWM0->MR1 = T_ON;
+		PWM0->MR2 = T_ON;
 
     PWM0->LER |= 1 << 1;
+		PWM0->LER |= 1 << 2;
+
 }

@@ -10,7 +10,7 @@
 .\objects\main.o: Library/GPIO.h
 .\objects\main.o: Library/PWM.h
 .\objects\main.o: Library/SystemStructures.h
-.\objects\main.o: Library/Hidden.h
 .\objects\main.o: Library/Joystick.h
 .\objects\main.o: Library/Parameters.h
 .\objects\main.o: Library/LED.h
+.\objects\main.o: Library/Motor.h

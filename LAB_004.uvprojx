@@ -428,11 +428,6 @@
               <FilePath>.\Library\PWM.h</FilePath>
             </File>
             <File>
-              <FileName>Hidden.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Library\Hidden.c</FilePath>
-            </File>
-            <File>
               <FileName>LED.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Library\LED.c</FilePath>
@@ -441,6 +436,36 @@
               <FileName>LED.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Library\LED.h</FilePath>
+            </File>
+            <File>
+              <FileName>Motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Library\Motor.c</FilePath>
+            </File>
+            <File>
+              <FileName>Motor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Library\Motor.h</FilePath>
+            </File>
+            <File>
+              <FileName>Timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Library\Timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>Timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Library\Timer.h</FilePath>
+            </File>
+            <File>
+              <FileName>Wait.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Library\Wait.c</FilePath>
+            </File>
+            <File>
+              <FileName>Wait.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Library\Wait.h</FilePath>
             </File>
           </Files>
         </Group>
