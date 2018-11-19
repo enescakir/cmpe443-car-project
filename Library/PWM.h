@@ -4,7 +4,7 @@
 #include "LPC407x_8x_177x_8x.h"
 #include "SystemStructures.h"
 
-//PWM_TypeDef struct.
+// PWM_TypeDef struct.
 typedef struct {
 	volatile uint32_t IR;
 	volatile uint32_t TCR;
@@ -21,13 +21,13 @@ typedef struct {
 	volatile uint32_t CR1;
 	volatile uint32_t CR2;
 	volatile uint32_t CR3;
-					 uint32_t RESERVED0;
+	uint32_t          RESERVED0;
 	volatile uint32_t MR4;
 	volatile uint32_t MR5;
 	volatile uint32_t MR6;
 	volatile uint32_t PCR;
 	volatile uint32_t LER;
-					 uint32_t RESERVED1[7];
+	uint32_t          RESERVED1[7];
 	volatile uint32_t CTCR;
 
 

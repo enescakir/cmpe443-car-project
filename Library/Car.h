@@ -10,8 +10,6 @@
 #include "Speedometer.h"
 #include "Parameters.h"
 
-//Struct of GPIO
-
 extern int carSpeed;
 
 void Car_Init(void);

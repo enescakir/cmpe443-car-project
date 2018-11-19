@@ -3,25 +3,25 @@
 
 #include "LPC407x_8x_177x_8x.h"
 
-//Struct of GPIO
+// Struct of GPIO
 typedef struct {
-    volatile uint32_t DIR;
-    uint32_t RESERVED0[3];
-    volatile uint32_t MASK;
-    volatile uint32_t PIN;
-    volatile uint32_t SET;
-    volatile uint32_t CLR;
+	volatile uint32_t DIR;
+	uint32_t          RESERVED0[3];
+	volatile uint32_t MASK;
+	volatile uint32_t PIN;
+	volatile uint32_t SET;
+	volatile uint32_t CLR;
 
 } GPIO_TypeDef;
 
 typedef enum {
-    INPUT = 0,
-    OUTPUT = 1
+	INPUT  = 0,
+	OUTPUT = 1
 } GPIO_Direction;
 
 typedef enum {
-    LOW = 0,
-    HIGH = 1
+	LOW  = 0,
+	HIGH = 1
 } GPIO_Value;
 
 #define GPIO_ADDRESS    0x20098000

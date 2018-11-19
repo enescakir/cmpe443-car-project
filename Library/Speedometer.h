@@ -5,7 +5,7 @@
 #include "SystemStructures.h"
 #include "Timer.h"
 
-// SPEEDOMETER
+// P0.23 (P30) in BOARD
 #define IOCON_SPEEDOMETER_ADDRESS 0x4002C05C
 #define IOCON_SPEEDOMETER *((volatile uint32_t *) IOCON_SPEEDOMETER_ADDRESS)
 
