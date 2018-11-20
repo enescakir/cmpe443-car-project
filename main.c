@@ -11,11 +11,11 @@ void init() {
 
 void update() {
 	// Handle joystick presses
-	if (Joystick_Center_Pressed()) stopCar();
-	else if (Joystick_Up_Pressed()) goForward();
-	else if (Joystick_Down_Pressed()) goBackward();
-	else if (Joystick_Left_Pressed()) turnLeft();
-	else if (Joystick_Right_Pressed()) turnRight();
+	if (Joystick_Center_Pressed()) { stopCar(); countHole = 0; }
+	else if (Joystick_Up_Pressed()) { goForward(); countHole = 0; }
+	else if (Joystick_Down_Pressed()) { goBackward(); countHole = 0; }
+	else if (Joystick_Left_Pressed()) { turnLeft(); countHole = 0; }
+	else if (Joystick_Right_Pressed()) { turnRight(); countHole = 0; }
 
 	// Count wheel rotation
 	current = TIMER3->CR0;

@@ -8,7 +8,7 @@
 
 // PWM0[6] used for motors
 // IOCON address for PWM0[6]
-// P1.3 (P29) in BOARD
+// P1.11 (P25) in BOARD
 #define IOCON_PWM0_6_ADDRESS 0x4002C0AC
 #define IOCON_PWM0_6 *((volatile uint32_t *) IOCON_PWM0_6_ADDRESS)
 
@@ -21,12 +21,12 @@
 #define IN2_MASK ((uint32_t) 1 << 23)
 
 // IN3 PIN
-#define IN3_PORT PORT1
-#define IN3_MASK ((uint32_t) 1 << 20)
+#define IN3_PORT PORT0
+#define IN3_MASK ((uint32_t) 1 << 21)
 
 // IN4 PIN
 #define IN4_PORT PORT0
-#define IN4_MASK ((uint32_t) 1 << 21)
+#define IN4_MASK ((uint32_t) 1 << 1)
 
 typedef enum {
 	FORWARD  = 2,
