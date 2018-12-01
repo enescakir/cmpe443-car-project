@@ -38,6 +38,8 @@ void LED_On(GPIO_TypeDef *PORT, uint32_t MASK);
 
 void LED_Off(GPIO_TypeDef *PORT, uint32_t MASK);
 
+void LED_Write(uint32_t T_ON);
+
 void LED_Controller(int frontLeft, int frontRight, int backRight, int backLeft, int isBlink);
 
 #endif

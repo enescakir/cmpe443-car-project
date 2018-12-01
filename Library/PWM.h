@@ -29,10 +29,7 @@ typedef struct {
 	volatile uint32_t LER;
 	uint32_t          RESERVED1[7];
 	volatile uint32_t CTCR;
-
-
 } PWM_TypeDef;
-
 
 #define PWM0_BASE    0x40014000
 #define PWM1_BASE    0x40018000
@@ -40,14 +37,19 @@ typedef struct {
 #define PWM0    ((PWM_TypeDef*) PWM0_BASE)
 #define PWM1    ((PWM_TypeDef*) PWM1_BASE)
 
-void PWM_Init(void);
+typedef enum {
+	CHANNEL_1 = 1,
+	CHANNEL_2 = 2,
+	CHANNEL_3 = 3,
+	CHANNEL_4 = 4,
+	CHANNEL_5 = 5,
+	CHANNEL_6 = 6
+} PWM_Channel;
 
-void PWM0_Cycle_Rate(uint32_t period_In_Cycles);
+void PWM_Init(PWM_TypeDef *PWM, uint32_t *IOCON, uint32_t IOCON_FUNC, uint32_t PCONP_MASK, uint32_t channel);
 
-void PWM0_Write(uint32_t T_ON);
+void PWM_Cycle_Rate(PWM_TypeDef *PWM, uint32_t period_In_Cycles);
 
-void PWM1_Cycle_Rate(uint32_t period_In_Cycles);
-
-void PWM1_Write(uint32_t T_ON);
+void PWM_Write(PWM_TypeDef *PWM, uint32_t channel, uint32_t T_ON);
 
 #endif

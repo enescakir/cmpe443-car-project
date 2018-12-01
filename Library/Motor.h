@@ -41,6 +41,8 @@ void Motor_PWM_Init(void);
 
 void Motor_Direction_Init(void);
 
+void Motor_Write(uint32_t speed);
+
 void Motor_Handle(int direction, GPIO_TypeDef *MOTOR1, uint32_t MASK1, GPIO_TypeDef *MOTOR2, uint32_t MASK2);
 
 void Motor_Controller(int motor1, int motor2, int speed);
