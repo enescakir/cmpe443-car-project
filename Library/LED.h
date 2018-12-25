@@ -14,12 +14,12 @@
 #define LED_PWM_CHANNEL 2
 
 // Front-left LED
-#define LED1_PORT PORT0
-#define LED1_MASK ((uint32_t) 1 << 25)
+#define LED1_PORT PORT1
+#define LED1_MASK ((uint32_t) 1 << 6)
 
 // Front-right LED
 #define LED2_PORT PORT0
-#define LED2_MASK ((uint32_t) 1 << 26)
+#define LED2_MASK ((uint32_t) 1 << 21)
 
 // Back-right LED
 #define LED3_PORT PORT1

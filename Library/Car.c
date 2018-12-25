@@ -6,9 +6,10 @@ int FORWARD_FLAG    = 0;
 int BACKWARD_FLAG   = 0;
 int IS_ESCAPING     = 0;
 
-int speed  = 0;
-int mode   = START_MODE;
-int active = 0;
+int speed     = 0;
+int mode      = START_MODE;
+int active    = 0;
+int turnCount = 0;
 
 void Car_Init() {
 	Joystick_Init();

@@ -37,6 +37,8 @@ typedef struct {
 #define PWM0_PCONP    ((uint32_t) 1 << 5)
 #define PWM1_PCONP    ((uint32_t) 1 << 6)
 
+#define PWM1_PCONP    (1 << 6)
+
 #define PWM0    ((PWM_TypeDef*) PWM0_BASE)
 #define PWM1    ((PWM_TypeDef*) PWM1_BASE)
 

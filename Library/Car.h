@@ -9,12 +9,14 @@
 #include "Motor.h"
 #include "Ultrasonic.h"
 #include "Trimpot.h"
+#include "LDR.h"
 #include "Parameters.h"
 
 int speed;
 int distance;
 int mode;
 int active;
+int turnCount;
 
 typedef enum {
 	AUTO   = '#',

@@ -7,6 +7,9 @@ void init() {
 	Car_Init();
 }
 
+uint32_t LDR_Left_Value;
+uint32_t LDR_Right_Value;
+
 void update() {
 	if (mode == AUTO) update_auto();
 	else if (mode == MANUEL) update_manual();
@@ -23,7 +26,18 @@ void update_auto() {
 }
 
 void update_manual() {
+	// Check distance
 	checkObstacle()
+
+	// Check light sources
+	LDR_Left_Value  = LDR_Left_Read_Data();
+	LDR_Right_Value = LDR_Right_Read_Data();
+
+	if (LDR_Left_Value < LIGHT_THRESHOLD) {
+		turnRight(20);
+	} else if (LDR_Right_Value < LIGHT_THRESHOLD) {
+		turnLeft(20);
+	}
 
 	// Handle joystick presses
 	if (Joystick_Center_Pressed()) stopCar();

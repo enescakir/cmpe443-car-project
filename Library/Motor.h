@@ -6,16 +6,15 @@
 #include "PWM.h"
 #include "GPIO.h"
 
-// PWM0[6] used for motors
-// IOCON address for PWM0[6]
-// P1.11 (P25) in BOARD
-// TODO: IOCON_PWM0_5 define
-#define IOCON_LEFT_MOTOR_ADDRESS 0x4002C0AC
+// PWM0[5] used for left motors
+// P1.7 (P26)
+#define IOCON_LEFT_MOTOR_ADDRESS 0x4002C09C
 #define IOCON_LEFT_MOTOR *((volatile uint32_t *) IOCON_LEFT_MOTOR_ADDRESS)
 #define IOCON_LEFT_MOTOR_PWM_FUNC 3
 #define LEFT_MOTOR_PWM_CHANNEL 5
 
-// TODO: PWM0[6]
+// PWM0[6] used for right motors
+// P1.11 (P25)
 #define IOCON_RIGHT_MOTOR_ADDRESS 0x4002C0AC
 #define IOCON_RIGHT_MOTOR *((volatile uint32_t *) IOCON_RIGHT_MOTOR_ADDRESS)
 #define IOCON_RIGHT_MOTOR_PWM_FUNC 3
@@ -23,19 +22,19 @@
 
 // IN1 PIN
 #define IN1_PORT PORT1
-#define IN1_MASK ((uint32_t) 1 << 24)
+#define IN1_MASK ((uint32_t) 1 << 23)
 
 // IN2 PIN
 #define IN2_PORT PORT1
-#define IN2_MASK ((uint32_t) 1 << 23)
+#define IN2_MASK ((uint32_t) 1 << 24)
 
 // IN3 PIN
 #define IN3_PORT PORT0
-#define IN3_MASK ((uint32_t) 1 << 21)
+#define IN3_MASK ((uint32_t) 1 << 5)
 
 // IN4 PIN
 #define IN4_PORT PORT0
-#define IN4_MASK ((uint32_t) 1 << 1)
+#define IN4_MASK ((uint32_t) 1 << 4)
 
 typedef enum {
 	FORWARD  = 100,
