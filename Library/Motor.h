@@ -9,8 +9,17 @@
 // PWM0[6] used for motors
 // IOCON address for PWM0[6]
 // P1.11 (P25) in BOARD
-#define IOCON_PWM0_6_ADDRESS 0x4002C0AC
-#define IOCON_PWM0_6 *((volatile uint32_t *) IOCON_PWM0_6_ADDRESS)
+// TODO: IOCON_PWM0_5 define
+#define IOCON_LEFT_MOTOR_ADDRESS 0x4002C0AC
+#define IOCON_LEFT_MOTOR *((volatile uint32_t *) IOCON_LEFT_MOTOR_ADDRESS)
+#define IOCON_LEFT_MOTOR_PWM_FUNC 3
+#define LEFT_MOTOR_PWM_CHANNEL 5
+
+// TODO: PWM0[6]
+#define IOCON_RIGHT_MOTOR_ADDRESS 0x4002C0AC
+#define IOCON_RIGHT_MOTOR *((volatile uint32_t *) IOCON_RIGHT_MOTOR_ADDRESS)
+#define IOCON_RIGHT_MOTOR_PWM_FUNC 3
+#define RIGHT_MOTOR_PWM_CHANNEL 6
 
 // IN1 PIN
 #define IN1_PORT PORT1
@@ -29,8 +38,8 @@
 #define IN4_MASK ((uint32_t) 1 << 1)
 
 typedef enum {
-	FORWARD  = 2,
-	BACKWARD = 1,
+	FORWARD  = 100,
+	BACKWARD = -100,
 	STOP     = 0
 } Motor_Direction;
 
@@ -41,7 +50,7 @@ void Motor_PWM_Init(void);
 
 void Motor_Direction_Init(void);
 
-void Motor_Write(uint32_t speed);
+void Motor_Write(uint32_t speed, uint32_t channel);
 
 void Motor_Handle(int direction, GPIO_TypeDef *MOTOR1, uint32_t MASK1, GPIO_TypeDef *MOTOR2, uint32_t MASK2);
 

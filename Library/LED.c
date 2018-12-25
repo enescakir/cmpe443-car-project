@@ -7,7 +7,7 @@ void LED_Init() {
 	GPIO_DIR_Write(LED3_PORT, LED3_MASK, OUTPUT);
 	GPIO_DIR_Write(LED4_PORT, LED4_MASK, OUTPUT);
 
-	PWM_Init(PWM1, IOCON_PWM1_2, 2, (1 << 6), CHANNEL_2)
+	PWM_Init(PWM1, IOCON_LED_PWM, IOCON_LED_PWM_FUNC, PWM1_PCONP, LED_PWM_CHANNEL)
 }
 
 void LED_On(GPIO_TypeDef *PORT, uint32_t MASK) {
@@ -36,5 +36,4 @@ void LED_Controller(int frontLeft, int frontRight, int backRight, int backLeft, 
 	// If they are blink, change cycle rate for PMW1
 	if (isBlink) PWM_Cycle_Rate(PWM1, 500);
 	else PWM_Cycle_Rate(PWM1, 20);
-
 }

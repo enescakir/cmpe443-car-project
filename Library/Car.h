@@ -7,10 +7,19 @@
 #include "Joystick.h"
 #include "LED.h"
 #include "Motor.h"
-#include "Speedometer.h"
+#include "Ultrasonic.h"
+#include "Trimpot.h"
 #include "Parameters.h"
 
-extern int carSpeed;
+int speed;
+int distance;
+int mode;
+int active;
+
+typedef enum {
+	AUTO   = '#',
+	MANUEL = '*',
+}   Car_Mode;
 
 void Car_Init(void);
 
@@ -18,11 +27,23 @@ void goForward(void);
 
 void goBackward(void);
 
-void turnRight(void);
+void turnRight(int rate);
 
-void turnLeft(void);
+void turnLeft(int rate);
 
 void stopCar(void);
+
+void updateSpeed(void);
+
+char toggleMode(void);
+
+int getDistance(void);
+
+void startEscape(void);
+
+void endEscape(void);
+
+void checkObstacle(void);
 
 void setFlags(int turnLeft, int turnRight, int forward, int backward);
 

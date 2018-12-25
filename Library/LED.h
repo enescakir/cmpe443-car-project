@@ -8,8 +8,10 @@
 // PWM1[2] used for LEDS
 // IOCON address for PWM1[2]
 // P1.20 (P7) in BOARD
-#define IOCON_PWM1_2_ADDRESS 0x4002C0D0
-#define IOCON_PWM1_2 *((volatile uint32_t *) IOCON_PWM1_2_ADDRESS)
+#define IOCON_LED_PWM_ADDRESS 0x4002C0D0
+#define IOCON_LED_PWM *((volatile uint32_t *) IOCON_LED_PWM_ADDRESS)
+#define IOCON_LED_PWM_FUNC 2
+#define LED_PWM_CHANNEL 2
 
 // Front-left LED
 #define LED1_PORT PORT0

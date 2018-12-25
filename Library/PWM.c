@@ -2,10 +2,10 @@
 
 void PWM_Init(PWM_TypeDef *PWM, uint32_t *IOCON, uint32_t IOCON_FUNC, uint32_t PCONP_MASK, uint32_t channel) {
 	// Change the function of the pin in here:
-	uint32_t value = IOCON;
+	uint32_t value1 = IOCON;
 	value1 &= ~7;
 	value1 |= IOCON_FUNC;
-	IOCON          = value1;
+	IOCON           = value1;
 
 	// Power the PWM0 from PCONP
 	PCONP |= PCONP_MASK;
