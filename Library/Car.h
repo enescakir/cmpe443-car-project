@@ -13,15 +13,20 @@
 #include "Parameters.h"
 
 int speed;
-int distance;
 int mode;
 int active;
 int turnCount;
 
+// Sensor values
+uint32_t distance;
+uint32_t LDR_Left_Value;
+uint32_t LDR_Right_Value;
+uint32_t LDR_Difference;
+
 typedef enum {
 	AUTO   = '#',
 	MANUEL = '*',
-}   Car_Mode;
+}        Car_Mode;
 
 void Car_Init(void);
 
@@ -35,11 +40,9 @@ void turnLeft(int rate);
 
 void stopCar(void);
 
-void updateSpeed(void);
+void updateSensorValues(void);
 
 char toggleMode(void);
-
-int getDistance(void);
 
 void startEscape(void);
 

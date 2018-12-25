@@ -11,6 +11,12 @@ int mode      = START_MODE;
 int active    = 0;
 int turnCount = 0;
 
+// Sensor values
+uint32_t distance        = 0;
+uint32_t LDR_Left_Value  = 0;
+uint32_t LDR_Right_Value = 0;
+uint32_t LDR_Difference  = 0;
+
 void Car_Init() {
 	Joystick_Init();
 	Motor_Init();
@@ -19,6 +25,7 @@ void Car_Init() {
 	Ultrasonic_Capture_Timer_Init();
 	Ultrasonic_Start_Trigger();
 	Trimpot_Init();
+	LDR_Init();
 };
 
 void goForward() {
@@ -51,9 +58,17 @@ void stopCar() {
 	setFlags(0, 0, 0, 0);
 };
 
-void updateSpeed(void) {
-	// TODO: Read and set speed
+void updateSensorValues(void) {
+	// Read speed from trim pot
 	speed = Trimpot_Read_Data();
+
+	// Read distance from ultrasonic sensor
+	distance = Ultrasonic_Get_Distance();
+
+	// Read light sources
+	LDR_Left_Value  = LDR_Left_Read_Data();
+	LDR_Right_Value = LDR_Right_Read_Data();
+	LDR_Difference  = abs(LDR_Left_Value - LDR_Right_Value);
 };
 
 char toggleMode(void) {
@@ -63,18 +78,9 @@ char toggleMode(void) {
 	return mode
 };
 
-int getDistance() {
-	return Ultrasonic_Get_Distance();
-};
-
 void startEscape() {
 	IS_ESCAPING = 1;
 	goBackward();
-};
-
-void endEscape() {
-	IS_ESCAPING = 1;
-	goForward();
 };
 
 void endEscape() {
@@ -83,9 +89,9 @@ void endEscape() {
 };
 
 void checkObstacle(void) {
-	if (getDistance() < OBSTACLE_DISTANCE) {
+	if (distance < OBSTACLE_DISTANCE) {
 		startEscape();
-	} else if (getDistance() > OBSTACLE_ESCAPE_DISTANCE && IS_ESCAPING) {
+	} else if (distance > OBSTACLE_ESCAPE_DISTANCE && IS_ESCAPING) {
 		endEscape();
 	}
 }

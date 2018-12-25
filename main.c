@@ -7,8 +7,6 @@ void init() {
 	Car_Init();
 }
 
-uint32_t LDR_Left_Value;
-uint32_t LDR_Right_Value;
 
 void update() {
 	if (mode == AUTO) update_auto();
@@ -21,7 +19,26 @@ void update_auto() {
 	else if (Joystick_Up_Pressed()) active = 1;
 
 	if (active) {
+		// Car is too close, stop car
+		if (distance < OBSTACLE_DISTANCE / 2) {
+			stopCar();
+			return;
+		}
 
+		// Car is little close, half speed
+		if (distance < OBSTACLE_DISTANCE) {
+			speed = speed / 2;
+		}
+
+		if (LDR_Difference > DIFFERENCE_THRESHOLD) {
+			if (LDR_Left_Value > LDR_Right_Value) {
+				turnLeft(LDR_Difference);
+			} else {
+				turnRight(LDR_Difference);
+			}
+		} else {
+			goForward();
+		}
 	}
 }
 
@@ -29,14 +46,15 @@ void update_manual() {
 	// Check distance
 	checkObstacle()
 
-	// Check light sources
-	LDR_Left_Value  = LDR_Left_Read_Data();
-	LDR_Right_Value = LDR_Right_Read_Data();
-
+	// Avoid from light source
 	if (LDR_Left_Value < LIGHT_THRESHOLD) {
 		turnRight(20);
 	} else if (LDR_Right_Value < LIGHT_THRESHOLD) {
 		turnLeft(20);
+	} else if (FORWARD_FLAG) {
+		goForward();
+	} else if (BACKWARD_FLAG) {
+		goBackward();
 	}
 
 	// Handle joystick presses
@@ -51,7 +69,8 @@ int main() {
 	init();
 
 	while (1) {
-		updateSpeed()
+		updateSensorValues();
+
 		update();
 	}
 }

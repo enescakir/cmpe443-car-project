@@ -13,6 +13,7 @@
 #define START_MODE '*'
 
 #define LIGHT_THRESHOLD 200
+#define DIFFERENCE_THRESHOLD 50
 #define TURN_THRESHOLD 1000
 
 extern int TURN_LEFT_FLAG;
