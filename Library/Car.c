@@ -1,5 +1,7 @@
 #include "Car.h"
 
+#define MAX(X,Y) (((X) < (Y)) ? (Y) : (X))
+
 int TURN_LEFT_FLAG  = 0;
 int TURN_RIGHT_FLAG = 0;
 int FORWARD_FLAG    = 0;
@@ -26,6 +28,7 @@ void Car_Init() {
 	Ultrasonic_Start_Trigger();
 	Trimpot_Init();
 	LDR_Init();
+	External_Init();
 	LED_Controller(OFF, OFF, OFF, OFF, 0);
 };
 
@@ -43,13 +46,14 @@ void goBackward() {
 
 void turnRight(int rate, int flag) {
 	LED_Controller(OFF, ON, ON, OFF, 1);
-	Motor_Controller(FORWARD + rate, FORWARD - rate, speed);
+	
+	Motor_Controller(FORWARD + rate, MAX(FORWARD - rate, 0), speed);
 	if (flag) setFlags(0, 1, 0, 0);
 };
 
 void turnLeft(int rate, int flag) {
 	LED_Controller(ON, OFF, OFF, ON, 1);
-	Motor_Controller(FORWARD - rate, FORWARD + rate, speed);
+	Motor_Controller(MAX(FORWARD - rate, 0), FORWARD + rate, speed);
 	if (flag) setFlags(1, 0, 0, 0);
 };
 
