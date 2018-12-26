@@ -14,6 +14,9 @@
 .\objects\car.o: Library\Joystick.h
 .\objects\car.o: Library\LED.h
 .\objects\car.o: Library\Motor.h
-.\objects\car.o: Library\Speedometer.h
+.\objects\car.o: Library\Ultrasonic.h
 .\objects\car.o: Library\Timer.h
+.\objects\car.o: Library\Trimpot.h
+.\objects\car.o: Library\ADC.h
+.\objects\car.o: Library\LDR.h
 .\objects\car.o: Library\Parameters.h

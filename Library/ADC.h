@@ -30,7 +30,7 @@ typedef struct {
 #define ADC_BASE    0x40034000
 #define ADC    ((ADC_TypeDef*) ADC_BASE)
 
-void ADC_Init(uint32_t *IOCON, uint32_t IOCON_FUNC);
+void ADC_Init(volatile uint32_t *IOCON, uint32_t IOCON_FUNC);
 
 void ADC_Start(void);
 

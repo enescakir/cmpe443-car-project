@@ -8,11 +8,6 @@ void init() {
 }
 
 
-void update() {
-	if (mode == AUTO) update_auto();
-	else if (mode == MANUEL) update_manual();
-}
-
 void update_auto() {
 	// Handle joystick presses
 	if (Joystick_Center_Pressed()) active = 0;
@@ -44,9 +39,10 @@ void update_auto() {
 
 void update_manual() {
 	// Check distance
-	checkObstacle()
+	checkObstacle();
 
 	// Avoid from light source
+	/*
 	if (LDR_Left_Value < LIGHT_THRESHOLD) {
 		turnRight(20);
 	} else if (LDR_Right_Value < LIGHT_THRESHOLD) {
@@ -55,7 +51,7 @@ void update_manual() {
 		goForward();
 	} else if (BACKWARD_FLAG) {
 		goBackward();
-	}
+	}*/
 
 	// Handle joystick presses
 	if (Joystick_Center_Pressed()) stopCar();
@@ -63,6 +59,11 @@ void update_manual() {
 	else if (Joystick_Down_Pressed()) goBackward();
 	else if (Joystick_Left_Pressed()) turnLeft(20);
 	else if (Joystick_Right_Pressed()) turnRight(20);
+}
+
+void update() {
+	if (mode == AUTO) update_auto();
+	else if (mode == MANUEL) update_manual();
 }
 
 int main() {

@@ -2,9 +2,9 @@
 
 
 void Trimpot_Init() {
-	ADC_Init(IOCON_TRIMPOD, IOCON_TRIMPOD_FUNC);
+	ADC_Init(&IOCON_TRIMPOT, IOCON_TRIMPOT_FUNC);
 }
 
 int Trimpot_Read_Data() {
-	return ADC_Read(TRIMPOD_ADC_CHANNEL, TRIMPOD_RANGE);
+	return ADC_Read(TRIMPOT_ADC_CHANNEL, TRIMPOT_RANGE);
 }

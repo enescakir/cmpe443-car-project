@@ -1,5 +1,5 @@
-#ifndef TRIMPOT_H
-#define TRIMPOT_H
+#ifndef LDR_H
+#define LDR_H
 
 #include "LPC407x_8x_177x_8x.h"
 #include "SystemStructures.h"
@@ -14,9 +14,9 @@
 
 // IOCON address for ADC0[2]
 // P0.25 (P17)
-#define RIGHT_LDR_ADDRESS 0x4002C064
-#define RIGHT_LDR *((volatile uint32_t *) RIGHT_LDR_ADDRESS)
-#define RIGHT_LDR_FUNC 1
+#define IOCON_RIGHT_LDR_ADDRESS 0x4002C064
+#define IOCON_RIGHT_LDR *((volatile uint32_t *) IOCON_RIGHT_LDR_ADDRESS)
+#define IOCON_RIGHT_LDR_FUNC 1
 #define RIGHT_LDR_ADC_CHANNEL 2
 
 

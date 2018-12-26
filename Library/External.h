@@ -5,9 +5,6 @@
 
 #include "Car.h"
 
-#ifndef EXTERNAL_H
-#define EXTERNAL_H
-
 typedef struct
 {
 	volatile	uint32_t EXTINT;

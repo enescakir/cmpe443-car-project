@@ -12,7 +12,7 @@ int active    = 0;
 int turnCount = 0;
 
 // Sensor values
-uint32_t distance        = 0;
+uint32_t distance        = 99999;
 uint32_t LDR_Left_Value  = 0;
 uint32_t LDR_Right_Value = 0;
 uint32_t LDR_Difference  = 0;
@@ -26,6 +26,7 @@ void Car_Init() {
 	Ultrasonic_Start_Trigger();
 	Trimpot_Init();
 	LDR_Init();
+	LED_Controller(OFF, OFF, OFF, OFF, 0);
 };
 
 void goForward() {
@@ -75,7 +76,7 @@ char toggleMode(void) {
 	if (mode == AUTO) mode = MANUEL;
 	else if (mode == MANUEL) mode = AUTO;
 
-	return mode
+	return mode;
 };
 
 void startEscape() {

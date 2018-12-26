@@ -14,6 +14,9 @@
 .\objects\main.o: Library/Joystick.h
 .\objects\main.o: Library/LED.h
 .\objects\main.o: Library/Motor.h
-.\objects\main.o: Library/Speedometer.h
+.\objects\main.o: Library/Ultrasonic.h
 .\objects\main.o: Library/Timer.h
+.\objects\main.o: Library/Trimpot.h
+.\objects\main.o: Library/ADC.h
+.\objects\main.o: Library/LDR.h
 .\objects\main.o: Library/Parameters.h

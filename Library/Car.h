@@ -12,16 +12,16 @@
 #include "LDR.h"
 #include "Parameters.h"
 
-int speed;
-int mode;
-int active;
-int turnCount;
+extern int speed;
+extern int mode;
+extern int active;
+extern int turnCount;
 
 // Sensor values
-uint32_t distance;
-uint32_t LDR_Left_Value;
-uint32_t LDR_Right_Value;
-uint32_t LDR_Difference;
+extern uint32_t distance;
+extern uint32_t LDR_Left_Value;
+extern uint32_t LDR_Right_Value;
+extern uint32_t LDR_Difference;
 
 typedef enum {
 	AUTO   = '#',

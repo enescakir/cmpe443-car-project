@@ -37,10 +37,8 @@ typedef struct {
 #define PWM0_PCONP    ((uint32_t) 1 << 5)
 #define PWM1_PCONP    ((uint32_t) 1 << 6)
 
-#define PWM1_PCONP    (1 << 6)
-
-#define PWM0    ((PWM_TypeDef*) PWM0_BASE)
-#define PWM1    ((PWM_TypeDef*) PWM1_BASE)
+#define PWM0 ((PWM_TypeDef*) PWM0_BASE)
+#define PWM1 ((PWM_TypeDef*) PWM1_BASE)
 
 typedef enum {
 	CHANNEL_1 = 1,
@@ -51,7 +49,7 @@ typedef enum {
 	CHANNEL_6 = 6
 } PWM_Channel;
 
-void PWM_Init(PWM_TypeDef *PWM, uint32_t *IOCON, uint32_t IOCON_FUNC, uint32_t PCONP_MASK, uint32_t channel);
+void PWM_Init(PWM_TypeDef *PWM, volatile uint32_t *IOCON, uint32_t IOCON_FUNC, uint32_t PCONP_MASK, uint32_t channel);
 
 void PWM_Cycle_Rate(PWM_TypeDef *PWM, uint32_t period_In_Cycles);
 

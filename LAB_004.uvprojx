@@ -468,16 +468,6 @@
               <FilePath>.\Library\Wait.h</FilePath>
             </File>
             <File>
-              <FileName>Speedometer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Library\Speedometer.c</FilePath>
-            </File>
-            <File>
-              <FileName>Speedometer.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Library\Speedometer.h</FilePath>
-            </File>
-            <File>
               <FileName>Car.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Library\Car.c</FilePath>
@@ -486,6 +476,31 @@
               <FileName>Car.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Library\Car.h</FilePath>
+            </File>
+            <File>
+              <FileName>ADC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Library\ADC.c</FilePath>
+            </File>
+            <File>
+              <FileName>External.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Library\External.c</FilePath>
+            </File>
+            <File>
+              <FileName>LDR.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Library\LDR.c</FilePath>
+            </File>
+            <File>
+              <FileName>Trimpot.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Library\Trimpot.c</FilePath>
+            </File>
+            <File>
+              <FileName>Ultrasonic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Library\Ultrasonic.c</FilePath>
             </File>
           </Files>
         </Group>
