@@ -41,16 +41,16 @@ void goBackward() {
 	setFlags(0, 0, 0, 1);
 };
 
-void turnRight(int rate) {
+void turnRight(int rate, int flag) {
 	LED_Controller(OFF, ON, ON, OFF, 1);
 	Motor_Controller(FORWARD + rate, FORWARD - rate, speed);
-	setFlags(0, 1, 0, 0);
+	if (flag) setFlags(0, 1, 0, 0);
 };
 
-void turnLeft(int rate) {
+void turnLeft(int rate, int flag) {
 	LED_Controller(ON, OFF, OFF, ON, 1);
 	Motor_Controller(FORWARD - rate, FORWARD + rate, speed);
-	setFlags(1, 0, 0, 0);
+	if (flag) setFlags(1, 0, 0, 0);
 };
 
 void stopCar() {
@@ -103,3 +103,7 @@ void setFlags(int turnLeft, int turnRight, int forward, int backward) {
 	FORWARD_FLAG    = forward;
 	BACKWARD_FLAG   = backward;
 }
+
+int isMoving() {
+	return (TURN_LEFT_FLAG + TURN_RIGHT_FLAG + FORWARD_FLAG + BACKWARD_FLAG) > 0;
+};

@@ -27,9 +27,9 @@ void update_auto() {
 
 		if (LDR_Difference > DIFFERENCE_THRESHOLD) {
 			if (LDR_Left_Value > LDR_Right_Value) {
-				turnLeft(LDR_Difference);
+				turnLeft(LDR_Difference, 1);
 			} else {
-				turnRight(LDR_Difference);
+				turnRight(LDR_Difference, 1);
 			}
 		} else {
 			goForward();
@@ -44,9 +44,9 @@ void update_manual() {
 	// Avoid from light source
 	/*
 	if (LDR_Left_Value < LIGHT_THRESHOLD) {
-		turnRight(20);
+		turnRight(20, 0);
 	} else if (LDR_Right_Value < LIGHT_THRESHOLD) {
-		turnLeft(20);
+		turnLeft(20, 0);
 	} else if (FORWARD_FLAG) {
 		goForward();
 	} else if (BACKWARD_FLAG) {
@@ -57,8 +57,8 @@ void update_manual() {
 	if (Joystick_Center_Pressed()) stopCar();
 	else if (Joystick_Up_Pressed()) goForward();
 	else if (Joystick_Down_Pressed()) goBackward();
-	else if (Joystick_Left_Pressed()) turnLeft(20);
-	else if (Joystick_Right_Pressed()) turnRight(20);
+	else if (Joystick_Left_Pressed()) turnLeft(20, 1);
+	else if (Joystick_Right_Pressed()) turnRight(20, 1);
 }
 
 void update() {

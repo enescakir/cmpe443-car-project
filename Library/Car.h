@@ -34,9 +34,9 @@ void goForward(void);
 
 void goBackward(void);
 
-void turnRight(int rate);
+void turnRight(int rate, int flag);
 
-void turnLeft(int rate);
+void turnLeft(int rate, int flag);
 
 void stopCar(void);
 
@@ -51,5 +51,7 @@ void endEscape(void);
 void checkObstacle(void);
 
 void setFlags(int turnLeft, int turnRight, int forward, int backward);
+
+int isMoving();
 
 #endif
