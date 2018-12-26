@@ -80,7 +80,7 @@ void updateSensorValues(void) {
 char toggleMode(void) {
 	if (mode == AUTO) mode = MANUEL;
 	else if (mode == MANUEL) mode = AUTO;
-
+	stopCar();
 	return mode;
 };
 

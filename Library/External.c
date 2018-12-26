@@ -2,10 +2,10 @@
 
 void External_Init() {
 	//Change the functionality of the push button as EINT0
-	uint32_t value = EXT->EXTINT;
+	uint32_t value    = IOCON_PUSH_BUTTON;
 	value &= ~7;
-	value |= (1 << 0);
-	EXT->EXTINT    = value;
+	value |= 1;
+	IOCON_PUSH_BUTTON = value;
 
 	//Change the External interrupt mode as Edge Sensitive
 	EXT->EXTMODE |= (1 << 0);
