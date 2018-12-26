@@ -28,9 +28,9 @@ void ESP8266_Init() {
 	ESP8266_UART->LCR |= (1 << 7);
 
 	//Write correct DLM, DLL and FDR values for 115200 baudrate
-	Serial_UART->DLM = (0x00 << 0);
-	Serial_UART->DLL = (0x13 << 0);
-	Serial_UART->FDR = ((0x05 << 0) | (0x07 << 4));
+	ESP8266_UART->DLM = (0x00 << 0);
+	ESP8266_UART->DLL = (0x13 << 0);
+	ESP8266_UART->FDR = ((0x05 << 0) | (0x07 << 4));
 
 	ESP8266_UART->LCR &= ~(1 << 7);
 
@@ -40,7 +40,7 @@ void ESP8266_Init() {
 						| 0 << 4;
 
 	//Enable the Receive Data Available Interrupt.
-	Serial_UART->IER |= (1 << 0); // RBR Interrupt Enable.
+	ESP8266_UART->IER |= (1 << 0); // RBR Interrupt Enable.
 
 	//Enable UART3_IRQn Interrupt.
 	NVIC_EnableIRQ(UART3_IRQn);
@@ -67,7 +67,6 @@ uint8_t ESP8266_waitResponseEnd() {
 			bufferIndex = esp8266ResponseStartIndex + esp8266ResponseCurrentIndex;
 			esp8266Response[esp8266ResponseCurrentIndex] = esp8266Buffer[bufferIndex];
 		}
-		Serial_Write(esp8266Response);
 		if (strstr(esp8266Response, "\r\nOK")) {
 			return 1;
 		} else if (strstr(esp8266Response, "\r\nFAIL")) {

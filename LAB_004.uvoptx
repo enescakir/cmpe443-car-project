@@ -190,12 +190,22 @@
           <WinNumber>1</WinNumber>
           <ItemText>LDR_Difference,0x0A</ItemText>
         </Ww>
+        <Ww>
+          <count>8</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>esp8266Buffer[ESP8266BufferSize]</ItemText>
+        </Ww>
       </WatchWindow1>
       <WatchWindow2>
         <Ww>
           <count>0</count>
           <WinNumber>2</WinNumber>
-          <ItemText>serialReceivedCharacter</ItemText>
+          <ItemText>esp8266Buffer</ItemText>
+        </Ww>
+        <Ww>
+          <count>1</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>esp8266Response</ItemText>
         </Ww>
       </WatchWindow2>
       <MemoryWindow1>
@@ -562,6 +572,30 @@
       <bDave2>0</bDave2>
       <PathWithFileName>.\Library\Serial.h</PathWithFileName>
       <FilenameWithoutPath>Serial.h</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>2</GroupNumber>
+      <FileNumber>26</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\Library\ESP8266.c</PathWithFileName>
+      <FilenameWithoutPath>ESP8266.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>2</GroupNumber>
+      <FileNumber>27</FileNumber>
+      <FileType>5</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\Library\ESP8266.h</PathWithFileName>
+      <FilenameWithoutPath>ESP8266.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

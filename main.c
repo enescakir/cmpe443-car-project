@@ -7,10 +7,11 @@
 #include "Library/ESP8266.h"
 
 void init() {
-//	Car_Init();
-	Serial_Init();
+	Car_Init();
+	Serial_Write("\033[2J");
+
 	ESP8266_Init();
-	ESP8266_sendCommand("AT+CWLAP\r\n");
+	// ESP8266_sendCommand("AT+CWJAP=\"HWLAB\",\"enes12345\"\r\n");
 }
 
 
@@ -72,7 +73,22 @@ void update() {
 
 int main() {
 	init();
-
+	ESP8266_sendCommand("AT+RST\r\n");
+	wait(1000);
+	ESP8266_sendCommand("AT+CWJAP=\"HWLAB\",\"12345678\"\r\n");
+	Serial_Write("Bagli\r\n");
+	Serial_Write(ESP8266_readResponse());
+	Serial_Write("\r\n");
+	ESP8266_sendCommand("AT+CIFSR\r\n");
+	Serial_Write("IP1\r\n");
+	ESP8266_waitResponseEnd();
+	char* response = ESP8266_readResponse();
+	Serial_Write(response);
+	Serial_Write("\r\n");
+	Serial_Write(esp8266Response);
+	Serial_Write("\r\n");
+	Serial_Write("IP2\r\n");
+	Serial_Write("\r\n");
 	while (1) {
 //		updateSensorValues();
 //

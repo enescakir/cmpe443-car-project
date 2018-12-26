@@ -512,6 +512,16 @@
               <FileType>5</FileType>
               <FilePath>.\Library\Serial.h</FilePath>
             </File>
+            <File>
+              <FileName>ESP8266.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Library\ESP8266.c</FilePath>
+            </File>
+            <File>
+              <FileName>ESP8266.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Library\ESP8266.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
