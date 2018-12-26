@@ -52,6 +52,6 @@ void checkObstacle(void);
 
 void setFlags(int turnLeft, int turnRight, int forward, int backward);
 
-int isMoving();
+int isMoving(void);
 
 #endif

@@ -40,9 +40,8 @@ void update_auto() {
 void update_manual() {
 	// Check distance
 	checkObstacle();
-
+	
 	// Avoid from light source
-	/*
 	if (LDR_Left_Value < LIGHT_THRESHOLD) {
 		turnRight(20, 0);
 	} else if (LDR_Right_Value < LIGHT_THRESHOLD) {
@@ -51,8 +50,7 @@ void update_manual() {
 		goForward();
 	} else if (BACKWARD_FLAG) {
 		goBackward();
-	}*/
-
+	}
 	// Handle joystick presses
 	if (Joystick_Center_Pressed()) stopCar();
 	else if (Joystick_Up_Pressed()) goForward();

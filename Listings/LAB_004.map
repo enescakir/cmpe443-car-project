@@ -19,16 +19,17 @@ Section Cross References
     main.o(i.update_auto) refers to car.o(i.goForward) for goForward
     main.o(i.update_auto) refers to car.o(.data) for active
     main.o(i.update_manual) refers to car.o(i.checkObstacle) for checkObstacle
+    main.o(i.update_manual) refers to car.o(i.turnRight) for turnRight
+    main.o(i.update_manual) refers to car.o(i.turnLeft) for turnLeft
+    main.o(i.update_manual) refers to car.o(i.goForward) for goForward
+    main.o(i.update_manual) refers to car.o(i.goBackward) for goBackward
     main.o(i.update_manual) refers to joystick.o(i.Joystick_Center_Pressed) for Joystick_Center_Pressed
     main.o(i.update_manual) refers to car.o(i.stopCar) for stopCar
     main.o(i.update_manual) refers to joystick.o(i.Joystick_Up_Pressed) for Joystick_Up_Pressed
-    main.o(i.update_manual) refers to car.o(i.goForward) for goForward
     main.o(i.update_manual) refers to joystick.o(i.Joystick_Down_Pressed) for Joystick_Down_Pressed
-    main.o(i.update_manual) refers to car.o(i.goBackward) for goBackward
     main.o(i.update_manual) refers to joystick.o(i.Joystick_Left_Pressed) for Joystick_Left_Pressed
-    main.o(i.update_manual) refers to car.o(i.turnLeft) for turnLeft
     main.o(i.update_manual) refers to joystick.o(i.Joystick_Right_Pressed) for Joystick_Right_Pressed
-    main.o(i.update_manual) refers to car.o(i.turnRight) for turnRight
+    main.o(i.update_manual) refers to car.o(.data) for LDR_Left_Value
     joystick.o(i.Joystick_Center_Pressed) refers to gpio.o(i.GPIO_PIN_Read) for GPIO_PIN_Read
     joystick.o(i.Joystick_Down_Pressed) refers to gpio.o(i.GPIO_PIN_Read) for GPIO_PIN_Read
     joystick.o(i.Joystick_Init) refers to gpio.o(i.GPIO_DIR_Write) for GPIO_DIR_Write
@@ -66,9 +67,10 @@ Section Cross References
     car.o(i.Car_Init) refers to trimpot.o(i.Trimpot_Init) for Trimpot_Init
     car.o(i.Car_Init) refers to ldr.o(i.LDR_Init) for LDR_Init
     car.o(i.Car_Init) refers to led.o(i.LED_Controller) for LED_Controller
+    car.o(i.checkObstacle) refers to car.o(i.isMoving) for isMoving
     car.o(i.checkObstacle) refers to car.o(i.startEscape) for startEscape
     car.o(i.checkObstacle) refers to car.o(i.endEscape) for endEscape
-    car.o(i.checkObstacle) refers to car.o(.data) for distance
+    car.o(i.checkObstacle) refers to car.o(.data) for IS_ESCAPING
     car.o(i.endEscape) refers to car.o(i.goForward) for goForward
     car.o(i.endEscape) refers to car.o(.data) for IS_ESCAPING
     car.o(i.goBackward) refers to led.o(i.LED_Controller) for LED_Controller
@@ -79,6 +81,7 @@ Section Cross References
     car.o(i.goForward) refers to motor.o(i.Motor_Controller) for Motor_Controller
     car.o(i.goForward) refers to car.o(i.setFlags) for setFlags
     car.o(i.goForward) refers to car.o(.data) for speed
+    car.o(i.isMoving) refers to car.o(.data) for TURN_LEFT_FLAG
     car.o(i.setFlags) refers to car.o(.data) for TURN_LEFT_FLAG
     car.o(i.startEscape) refers to car.o(i.goBackward) for goBackward
     car.o(i.startEscape) refers to car.o(.data) for IS_ESCAPING
@@ -218,21 +221,21 @@ Image Symbol Table
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
     RESET                                    0x00000000   Section      228  startup_lpc407x_8x_177x_8x.o(RESET)
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
@@ -345,22 +348,23 @@ Image Symbol Table
     i.__scatterload_copy                     0x0000104e   Section       14  handlers.o(i.__scatterload_copy)
     i.__scatterload_zeroinit                 0x0000105c   Section       14  handlers.o(i.__scatterload_zeroinit)
     i.checkObstacle                          0x0000106c   Section        0  car.o(i.checkObstacle)
-    i.endEscape                              0x0000109c   Section        0  car.o(i.endEscape)
-    i.fpu_init                               0x000010b0   Section        0  system_lpc407x_8x_177x_8x.o(i.fpu_init)
-    i.goBackward                             0x00001100   Section        0  car.o(i.goBackward)
-    i.goForward                              0x00001130   Section        0  car.o(i.goForward)
-    i.init                                   0x00001160   Section        0  main.o(i.init)
-    i.main                                   0x00001168   Section        0  main.o(i.main)
-    i.setFlags                               0x00001178   Section        0  car.o(i.setFlags)
-    i.startEscape                            0x0000119c   Section        0  car.o(i.startEscape)
-    i.stopCar                                0x000011b0   Section        0  car.o(i.stopCar)
-    i.toggleMode                             0x000011dc   Section        0  car.o(i.toggleMode)
-    i.turnLeft                               0x00001204   Section        0  car.o(i.turnLeft)
-    i.turnRight                              0x00001238   Section        0  car.o(i.turnRight)
-    i.update                                 0x00001270   Section        0  main.o(i.update)
-    i.updateSensorValues                     0x00001294   Section        0  car.o(i.updateSensorValues)
-    i.update_auto                            0x000012e4   Section        0  main.o(i.update_auto)
-    i.update_manual                          0x00001374   Section        0  main.o(i.update_manual)
+    i.endEscape                              0x000010b0   Section        0  car.o(i.endEscape)
+    i.fpu_init                               0x000010c4   Section        0  system_lpc407x_8x_177x_8x.o(i.fpu_init)
+    i.goBackward                             0x00001114   Section        0  car.o(i.goBackward)
+    i.goForward                              0x00001144   Section        0  car.o(i.goForward)
+    i.init                                   0x00001174   Section        0  main.o(i.init)
+    i.isMoving                               0x0000117c   Section        0  car.o(i.isMoving)
+    i.main                                   0x000011b0   Section        0  main.o(i.main)
+    i.setFlags                               0x000011c0   Section        0  car.o(i.setFlags)
+    i.startEscape                            0x000011e4   Section        0  car.o(i.startEscape)
+    i.stopCar                                0x000011f8   Section        0  car.o(i.stopCar)
+    i.toggleMode                             0x00001224   Section        0  car.o(i.toggleMode)
+    i.turnLeft                               0x0000124c   Section        0  car.o(i.turnLeft)
+    i.turnRight                              0x00001284   Section        0  car.o(i.turnRight)
+    i.update                                 0x000012c0   Section        0  main.o(i.update)
+    i.updateSensorValues                     0x000012e4   Section        0  car.o(i.updateSensorValues)
+    i.update_auto                            0x0000135c   Section        0  main.o(i.update_auto)
+    i.update_manual                          0x000013f0   Section        0  main.o(i.update_manual)
     .data                                    0x10000000   Section       52  car.o(.data)
     .data                                    0x10000034   Section       20  ultrasonic.o(.data)
     .data                                    0x10000048   Section       16  system_lpc407x_8x_177x_8x.o(.data)
@@ -492,25 +496,26 @@ Image Symbol Table
     Ultrasonic_Trigger_Timer_Init            0x00000f89   Thumb Code   122  ultrasonic.o(i.Ultrasonic_Trigger_Timer_Init)
     __scatterload_copy                       0x0000104f   Thumb Code    14  handlers.o(i.__scatterload_copy)
     __scatterload_zeroinit                   0x0000105d   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    checkObstacle                            0x0000106d   Thumb Code    38  car.o(i.checkObstacle)
-    endEscape                                0x0000109d   Thumb Code    14  car.o(i.endEscape)
-    fpu_init                                 0x000010b1   Thumb Code    62  system_lpc407x_8x_177x_8x.o(i.fpu_init)
-    goBackward                               0x00001101   Thumb Code    44  car.o(i.goBackward)
-    goForward                                0x00001131   Thumb Code    44  car.o(i.goForward)
-    init                                     0x00001161   Thumb Code     8  main.o(i.init)
-    main                                     0x00001169   Thumb Code    16  main.o(i.main)
-    setFlags                                 0x00001179   Thumb Code    20  car.o(i.setFlags)
-    startEscape                              0x0000119d   Thumb Code    14  car.o(i.startEscape)
-    stopCar                                  0x000011b1   Thumb Code    42  car.o(i.stopCar)
-    toggleMode                               0x000011dd   Thumb Code    36  car.o(i.toggleMode)
-    turnLeft                                 0x00001205   Thumb Code    48  car.o(i.turnLeft)
-    turnRight                                0x00001239   Thumb Code    50  car.o(i.turnRight)
-    update                                   0x00001271   Thumb Code    30  main.o(i.update)
-    updateSensorValues                       0x00001295   Thumb Code    60  car.o(i.updateSensorValues)
-    update_auto                              0x000012e5   Thumb Code   118  main.o(i.update_auto)
-    update_manual                            0x00001375   Thumb Code    70  main.o(i.update_manual)
-    Region$$Table$$Base                      0x000013bc   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x000013dc   Number         0  anon$$obj.o(Region$$Table)
+    checkObstacle                            0x0000106d   Thumb Code    60  car.o(i.checkObstacle)
+    endEscape                                0x000010b1   Thumb Code    14  car.o(i.endEscape)
+    fpu_init                                 0x000010c5   Thumb Code    62  system_lpc407x_8x_177x_8x.o(i.fpu_init)
+    goBackward                               0x00001115   Thumb Code    44  car.o(i.goBackward)
+    goForward                                0x00001145   Thumb Code    44  car.o(i.goForward)
+    init                                     0x00001175   Thumb Code     8  main.o(i.init)
+    isMoving                                 0x0000117d   Thumb Code    34  car.o(i.isMoving)
+    main                                     0x000011b1   Thumb Code    16  main.o(i.main)
+    setFlags                                 0x000011c1   Thumb Code    20  car.o(i.setFlags)
+    startEscape                              0x000011e5   Thumb Code    14  car.o(i.startEscape)
+    stopCar                                  0x000011f9   Thumb Code    42  car.o(i.stopCar)
+    toggleMode                               0x00001225   Thumb Code    36  car.o(i.toggleMode)
+    turnLeft                                 0x0000124d   Thumb Code    52  car.o(i.turnLeft)
+    turnRight                                0x00001285   Thumb Code    54  car.o(i.turnRight)
+    update                                   0x000012c1   Thumb Code    30  main.o(i.update)
+    updateSensorValues                       0x000012e5   Thumb Code    94  car.o(i.updateSensorValues)
+    update_auto                              0x0000135d   Thumb Code   122  main.o(i.update_auto)
+    update_manual                            0x000013f1   Thumb Code   136  main.o(i.update_manual)
+    Region$$Table$$Base                      0x00001488   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000014a8   Number         0  anon$$obj.o(Region$$Table)
     TURN_LEFT_FLAG                           0x10000000   Data           4  car.o(.data)
     TURN_RIGHT_FLAG                          0x10000004   Data           4  car.o(.data)
     FORWARD_FLAG                             0x10000008   Data           4  car.o(.data)
@@ -544,43 +549,43 @@ Memory Map of the image
 
   Image Entry point : 0x000000f9
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00001434, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00001500, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000013dc, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000014a8, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00000000   0x00000000   0x000000e4   Data   RO          764    RESET               startup_lpc407x_8x_177x_8x.o
-    0x000000e4   0x000000e4   0x00000000   Code   RO          814  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x000000e4   0x000000e4   0x00000004   Code   RO          825    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x000000e8   0x000000e8   0x00000004   Code   RO          828    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x000000ec   0x000000ec   0x00000000   Code   RO          830    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x000000ec   0x000000ec   0x00000000   Code   RO          832    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x000000ec   0x000000ec   0x00000008   Code   RO          833    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x000000f4   0x000000f4   0x00000000   Code   RO          835    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x000000f4   0x000000f4   0x00000000   Code   RO          837    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x000000f4   0x000000f4   0x00000004   Code   RO          826    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
-    0x000000f8   0x000000f8   0x00000024   Code   RO          766  * .text               startup_lpc407x_8x_177x_8x.o
-    0x0000011c   0x0000011c   0x000000e4   Code   RO          817    .text               mf_w.l(dmul.o)
-    0x00000200   0x00000200   0x000000de   Code   RO          819    .text               mf_w.l(ddiv.o)
-    0x000002de   0x000002de   0x0000001a   Code   RO          821    .text               mf_w.l(dfltui.o)
-    0x000002f8   0x000002f8   0x00000000   Code   RO          841    .text               mc_w.l(iusefp.o)
-    0x000002f8   0x000002f8   0x00000002   Code   RO          851    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00000000   0x00000000   0x000000e4   Data   RO          770    RESET               startup_lpc407x_8x_177x_8x.o
+    0x000000e4   0x000000e4   0x00000000   Code   RO          820  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x000000e4   0x000000e4   0x00000004   Code   RO          831    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x000000e8   0x000000e8   0x00000004   Code   RO          834    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x000000ec   0x000000ec   0x00000000   Code   RO          836    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x000000ec   0x000000ec   0x00000000   Code   RO          838    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x000000ec   0x000000ec   0x00000008   Code   RO          839    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x000000f4   0x000000f4   0x00000000   Code   RO          841    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x000000f4   0x000000f4   0x00000000   Code   RO          843    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x000000f4   0x000000f4   0x00000004   Code   RO          832    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x000000f8   0x000000f8   0x00000024   Code   RO          772  * .text               startup_lpc407x_8x_177x_8x.o
+    0x0000011c   0x0000011c   0x000000e4   Code   RO          823    .text               mf_w.l(dmul.o)
+    0x00000200   0x00000200   0x000000de   Code   RO          825    .text               mf_w.l(ddiv.o)
+    0x000002de   0x000002de   0x0000001a   Code   RO          827    .text               mf_w.l(dfltui.o)
+    0x000002f8   0x000002f8   0x00000000   Code   RO          847    .text               mc_w.l(iusefp.o)
+    0x000002f8   0x000002f8   0x00000002   Code   RO          857    i.__scatterload_null  mc_w.l(handlers.o)
     0x000002fa   0x000002fa   0x00000002   PAD
-    0x000002fc   0x000002fc   0x00000004   Code   RO          765    .ARM.__at_0x02FC    startup_lpc407x_8x_177x_8x.o
-    0x00000300   0x00000300   0x00000032   Code   RO          823    .text               mf_w.l(dfixui.o)
-    0x00000332   0x00000332   0x00000020   Code   RO          839    .text               mc_w.l(llushr.o)
-    0x00000352   0x00000352   0x000000ba   Code   RO          842    .text               mf_w.l(depilogue.o)
-    0x0000040c   0x0000040c   0x00000024   Code   RO          844    .text               mc_w.l(init.o)
-    0x00000430   0x00000430   0x0000001e   Code   RO          846    .text               mc_w.l(llshl.o)
+    0x000002fc   0x000002fc   0x00000004   Code   RO          771    .ARM.__at_0x02FC    startup_lpc407x_8x_177x_8x.o
+    0x00000300   0x00000300   0x00000032   Code   RO          829    .text               mf_w.l(dfixui.o)
+    0x00000332   0x00000332   0x00000020   Code   RO          845    .text               mc_w.l(llushr.o)
+    0x00000352   0x00000352   0x000000ba   Code   RO          848    .text               mf_w.l(depilogue.o)
+    0x0000040c   0x0000040c   0x00000024   Code   RO          850    .text               mc_w.l(init.o)
+    0x00000430   0x00000430   0x0000001e   Code   RO          852    .text               mc_w.l(llshl.o)
     0x0000044e   0x0000044e   0x00000002   PAD
-    0x00000450   0x00000450   0x0000003c   Code   RO          535    i.ADC_Init          adc.o
-    0x0000048c   0x0000048c   0x00000058   Code   RO          536    i.ADC_Read          adc.o
-    0x000004e4   0x000004e4   0x00000014   Code   RO          537    i.ADC_Start         adc.o
-    0x000004f8   0x000004f8   0x00000014   Code   RO          538    i.ADC_Stop          adc.o
+    0x00000450   0x00000450   0x0000003c   Code   RO          541    i.ADC_Init          adc.o
+    0x0000048c   0x0000048c   0x00000058   Code   RO          542    i.ADC_Read          adc.o
+    0x000004e4   0x000004e4   0x00000014   Code   RO          543    i.ADC_Start         adc.o
+    0x000004f8   0x000004f8   0x00000014   Code   RO          544    i.ADC_Stop          adc.o
     0x0000050c   0x0000050c   0x00000032   Code   RO          423    i.Car_Init          car.o
     0x0000053e   0x0000053e   0x00000002   PAD
-    0x00000540   0x00000540   0x00000020   Code   RO          580    i.EINT0_IRQHandler  external.o
+    0x00000540   0x00000540   0x00000020   Code   RO          586    i.EINT0_IRQHandler  external.o
     0x00000560   0x00000560   0x00000012   Code   RO          123    i.GPIO_DIR_Write    gpio.o
     0x00000572   0x00000572   0x0000000a   Code   RO          124    i.GPIO_PIN_Read     gpio.o
     0x0000057c   0x0000057c   0x00000012   Code   RO          125    i.GPIO_PIN_Write    gpio.o
@@ -591,9 +596,9 @@ Memory Map of the image
     0x000005fc   0x000005fc   0x00000018   Code   RO          165    i.Joystick_Left_Pressed  joystick.o
     0x00000614   0x00000614   0x00000018   Code   RO          166    i.Joystick_Right_Pressed  joystick.o
     0x0000062c   0x0000062c   0x00000018   Code   RO          167    i.Joystick_Up_Pressed  joystick.o
-    0x00000644   0x00000644   0x0000001c   Code   RO          625    i.LDR_Init          ldr.o
-    0x00000660   0x00000660   0x0000000e   Code   RO          626    i.LDR_Left_Read_Data  ldr.o
-    0x0000066e   0x0000066e   0x0000000e   Code   RO          627    i.LDR_Right_Read_Data  ldr.o
+    0x00000644   0x00000644   0x0000001c   Code   RO          631    i.LDR_Init          ldr.o
+    0x00000660   0x00000660   0x0000000e   Code   RO          632    i.LDR_Left_Read_Data  ldr.o
+    0x0000066e   0x0000066e   0x0000000e   Code   RO          633    i.LDR_Right_Read_Data  ldr.o
     0x0000067c   0x0000067c   0x000000b4   Code   RO          261    i.LED_Controller    led.o
     0x00000730   0x00000730   0x0000004c   Code   RO          262    i.LED_Init          led.o
     0x0000077c   0x0000077c   0x00000012   Code   RO          263    i.LED_Off           led.o
@@ -609,57 +614,57 @@ Memory Map of the image
     0x00000900   0x00000900   0x00000018   Code   RO          219    i.PWM_Cycle_Rate    pwm.o
     0x00000918   0x00000918   0x00000064   Code   RO          220    i.PWM_Init          pwm.o
     0x0000097c   0x0000097c   0x00000098   Code   RO          221    i.PWM_Write         pwm.o
-    0x00000a14   0x00000a14   0x000002d4   Code   RO          775    i.SystemCoreClockUpdate  system_lpc407x_8x_177x_8x.o
-    0x00000ce8   0x00000ce8   0x000000ec   Code   RO          776    i.SystemInit        system_lpc407x_8x_177x_8x.o
-    0x00000dd4   0x00000dd4   0x00000054   Code   RO          691    i.TIMER2_IRQHandler  ultrasonic.o
-    0x00000e28   0x00000e28   0x00000090   Code   RO          692    i.TIMER3_IRQHandler  ultrasonic.o
-    0x00000eb8   0x00000eb8   0x00000010   Code   RO          661    i.Trimpot_Init      trimpot.o
-    0x00000ec8   0x00000ec8   0x0000000c   Code   RO          662    i.Trimpot_Read_Data  trimpot.o
-    0x00000ed4   0x00000ed4   0x00000060   Code   RO          693    i.Ultrasonic_Capture_Timer_Init  ultrasonic.o
-    0x00000f34   0x00000f34   0x00000028   Code   RO          694    i.Ultrasonic_Get_Distance  ultrasonic.o
-    0x00000f5c   0x00000f5c   0x0000002c   Code   RO          695    i.Ultrasonic_Start_Trigger  ultrasonic.o
-    0x00000f88   0x00000f88   0x00000090   Code   RO          696    i.Ultrasonic_Trigger_Timer_Init  ultrasonic.o
-    0x00001018   0x00001018   0x0000001c   Code   RO          697    i.__NVIC_ClearPendingIRQ  ultrasonic.o
-    0x00001034   0x00001034   0x0000001a   Code   RO          698    i.__NVIC_EnableIRQ  ultrasonic.o
-    0x0000104e   0x0000104e   0x0000000e   Code   RO          850    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x0000105c   0x0000105c   0x0000000e   Code   RO          852    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00000a14   0x00000a14   0x000002d4   Code   RO          781    i.SystemCoreClockUpdate  system_lpc407x_8x_177x_8x.o
+    0x00000ce8   0x00000ce8   0x000000ec   Code   RO          782    i.SystemInit        system_lpc407x_8x_177x_8x.o
+    0x00000dd4   0x00000dd4   0x00000054   Code   RO          697    i.TIMER2_IRQHandler  ultrasonic.o
+    0x00000e28   0x00000e28   0x00000090   Code   RO          698    i.TIMER3_IRQHandler  ultrasonic.o
+    0x00000eb8   0x00000eb8   0x00000010   Code   RO          667    i.Trimpot_Init      trimpot.o
+    0x00000ec8   0x00000ec8   0x0000000c   Code   RO          668    i.Trimpot_Read_Data  trimpot.o
+    0x00000ed4   0x00000ed4   0x00000060   Code   RO          699    i.Ultrasonic_Capture_Timer_Init  ultrasonic.o
+    0x00000f34   0x00000f34   0x00000028   Code   RO          700    i.Ultrasonic_Get_Distance  ultrasonic.o
+    0x00000f5c   0x00000f5c   0x0000002c   Code   RO          701    i.Ultrasonic_Start_Trigger  ultrasonic.o
+    0x00000f88   0x00000f88   0x00000090   Code   RO          702    i.Ultrasonic_Trigger_Timer_Init  ultrasonic.o
+    0x00001018   0x00001018   0x0000001c   Code   RO          703    i.__NVIC_ClearPendingIRQ  ultrasonic.o
+    0x00001034   0x00001034   0x0000001a   Code   RO          704    i.__NVIC_EnableIRQ  ultrasonic.o
+    0x0000104e   0x0000104e   0x0000000e   Code   RO          856    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x0000105c   0x0000105c   0x0000000e   Code   RO          858    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x0000106a   0x0000106a   0x00000002   PAD
-    0x0000106c   0x0000106c   0x00000030   Code   RO          424    i.checkObstacle     car.o
-    0x0000109c   0x0000109c   0x00000014   Code   RO          425    i.endEscape         car.o
-    0x000010b0   0x000010b0   0x00000050   Code   RO          777    i.fpu_init          system_lpc407x_8x_177x_8x.o
-    0x00001100   0x00001100   0x00000030   Code   RO          426    i.goBackward        car.o
-    0x00001130   0x00001130   0x00000030   Code   RO          427    i.goForward         car.o
-    0x00001160   0x00001160   0x00000008   Code   RO            4    i.init              main.o
-    0x00001168   0x00001168   0x00000010   Code   RO            5    i.main              main.o
-    0x00001178   0x00001178   0x00000024   Code   RO          428    i.setFlags          car.o
-    0x0000119c   0x0000119c   0x00000014   Code   RO          429    i.startEscape       car.o
-    0x000011b0   0x000011b0   0x0000002a   Code   RO          430    i.stopCar           car.o
-    0x000011da   0x000011da   0x00000002   PAD
-    0x000011dc   0x000011dc   0x00000028   Code   RO          431    i.toggleMode        car.o
-    0x00001204   0x00001204   0x00000034   Code   RO          432    i.turnLeft          car.o
-    0x00001238   0x00001238   0x00000038   Code   RO          433    i.turnRight         car.o
-    0x00001270   0x00001270   0x00000024   Code   RO            6    i.update            main.o
-    0x00001294   0x00001294   0x00000050   Code   RO          434    i.updateSensorValues  car.o
-    0x000012e4   0x000012e4   0x00000090   Code   RO            7    i.update_auto       main.o
-    0x00001374   0x00001374   0x00000046   Code   RO            8    i.update_manual     main.o
-    0x000013ba   0x000013ba   0x00000002   PAD
-    0x000013bc   0x000013bc   0x00000020   Data   RO          848    Region$$Table       anon$$obj.o
+    0x0000106c   0x0000106c   0x00000044   Code   RO          424    i.checkObstacle     car.o
+    0x000010b0   0x000010b0   0x00000014   Code   RO          425    i.endEscape         car.o
+    0x000010c4   0x000010c4   0x00000050   Code   RO          783    i.fpu_init          system_lpc407x_8x_177x_8x.o
+    0x00001114   0x00001114   0x00000030   Code   RO          426    i.goBackward        car.o
+    0x00001144   0x00001144   0x00000030   Code   RO          427    i.goForward         car.o
+    0x00001174   0x00001174   0x00000008   Code   RO            4    i.init              main.o
+    0x0000117c   0x0000117c   0x00000034   Code   RO          428    i.isMoving          car.o
+    0x000011b0   0x000011b0   0x00000010   Code   RO            5    i.main              main.o
+    0x000011c0   0x000011c0   0x00000024   Code   RO          429    i.setFlags          car.o
+    0x000011e4   0x000011e4   0x00000014   Code   RO          430    i.startEscape       car.o
+    0x000011f8   0x000011f8   0x0000002a   Code   RO          431    i.stopCar           car.o
+    0x00001222   0x00001222   0x00000002   PAD
+    0x00001224   0x00001224   0x00000028   Code   RO          432    i.toggleMode        car.o
+    0x0000124c   0x0000124c   0x00000038   Code   RO          433    i.turnLeft          car.o
+    0x00001284   0x00001284   0x0000003c   Code   RO          434    i.turnRight         car.o
+    0x000012c0   0x000012c0   0x00000024   Code   RO            6    i.update            main.o
+    0x000012e4   0x000012e4   0x00000078   Code   RO          435    i.updateSensorValues  car.o
+    0x0000135c   0x0000135c   0x00000094   Code   RO            7    i.update_auto       main.o
+    0x000013f0   0x000013f0   0x00000098   Code   RO            8    i.update_manual     main.o
+    0x00001488   0x00001488   0x00000020   Data   RO          854    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x10000000, Load base: 0x000013dc, Size: 0x00000058, Max: 0xffffffff, ABSOLUTE)
-
-    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x10000000   0x000013dc   0x00000034   Data   RW          435    .data               car.o
-    0x10000034   0x00001410   0x00000014   Data   RW          699    .data               ultrasonic.o
-    0x10000048   0x00001424   0x00000010   Data   RW          778    .data               system_lpc407x_8x_177x_8x.o
-
-
-    Execution Region ER_ZI (Exec base: 0x10000058, Load base: 0x00001434, Size: 0x00000400, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x10000000, Load base: 0x000014a8, Size: 0x00000058, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x10000058        -       0x00000400   Zero   RW          762    STACK               startup_lpc407x_8x_177x_8x.o
+    0x10000000   0x000014a8   0x00000034   Data   RW          436    .data               car.o
+    0x10000034   0x000014dc   0x00000014   Data   RW          705    .data               ultrasonic.o
+    0x10000048   0x000014f0   0x00000010   Data   RW          784    .data               system_lpc407x_8x_177x_8x.o
+
+
+    Execution Region ER_ZI (Exec base: 0x10000058, Load base: 0x00001500, Size: 0x00000400, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x10000058        -       0x00000400   Zero   RW          768    STACK               startup_lpc407x_8x_177x_8x.o
 
 
 ==============================================================================
@@ -670,13 +675,13 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
        188         32          0          0          0       2233   adc.o
-       540         80          0         52          0       6395   car.o
+       660        102          0         52          0       6982   car.o
         32         10          0          0          0        467   external.o
         46          0          0          0          0       2810   gpio.o
        180         26          0          0          0       3121   joystick.o
         56          6          0          0          0       1410   ldr.o
        312         26          0          0          0       3031   led.o
-       274         32          0          0          0      29077   main.o
+       360         48          0          0          0      29121   main.o
        330         28          0          0          0       3541   motor.o
        276         18          0          0          0       3088   pwm.o
         40         12        228          0       1024       1072   startup_lpc407x_8x_177x_8x.o
@@ -685,9 +690,9 @@ Image component sizes
        606         92          0         20          0      35036   ultrasonic.o
 
     ----------------------------------------------------------------------
-      3958        428        260         88       1024      96764   Object Totals
+      4162        466        260         88       1024      97395   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        10          0          0          0          0          0   (incl. Padding)
+         8          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -733,15 +738,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      4824        444        260         88       1024      91684   Grand Totals
-      4824        444        260         88       1024      91684   ELF Image Totals
-      4824        444        260         88          0          0   ROM Totals
+      5028        482        260         88       1024      92215   Grand Totals
+      5028        482        260         88       1024      92215   ELF Image Totals
+      5028        482        260         88          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 5084 (   4.96kB)
+    Total RO  Size (Code + RO Data)                 5288 (   5.16kB)
     Total RW  Size (RW Data + ZI Data)              1112 (   1.09kB)
-    Total ROM Size (Code + RO Data + RW Data)       5172 (   5.05kB)
+    Total ROM Size (Code + RO Data + RW Data)       5376 (   5.25kB)
 
 ==============================================================================
 

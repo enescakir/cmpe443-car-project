@@ -185,6 +185,11 @@
           <WinNumber>1</WinNumber>
           <ItemText>IS_ESCAPING,0x0A</ItemText>
         </Ww>
+        <Ww>
+          <count>7</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>LDR_Difference,0x0A</ItemText>
+        </Ww>
       </WatchWindow1>
       <MemoryWindow1>
         <Mm>

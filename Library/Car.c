@@ -64,12 +64,17 @@ void updateSensorValues(void) {
 	speed = Trimpot_Read_Data();
 
 	// Read distance from ultrasonic sensor
-	distance = Ultrasonic_Get_Distance();
+	if(turnCount % 1000 == 0){
+		distance = Ultrasonic_Get_Distance();
+		turnCount = 0;
+	}
 
 	// Read light sources
 	LDR_Left_Value  = LDR_Left_Read_Data();
 	LDR_Right_Value = LDR_Right_Read_Data();
 	LDR_Difference  = abs(LDR_Left_Value - LDR_Right_Value);
+	
+	turnCount += 1;
 };
 
 char toggleMode(void) {
@@ -90,9 +95,9 @@ void endEscape() {
 };
 
 void checkObstacle(void) {
-	if (distance < OBSTACLE_DISTANCE) {
+	if (!IS_ESCAPING && isMoving() && distance < OBSTACLE_DISTANCE) {
 		startEscape();
-	} else if (distance > OBSTACLE_ESCAPE_DISTANCE && IS_ESCAPING) {
+	} else if (IS_ESCAPING && distance > OBSTACLE_ESCAPE_DISTANCE && distance < ULTRASONIC_MAX_DISTANCE) {
 		endEscape();
 	}
 }
