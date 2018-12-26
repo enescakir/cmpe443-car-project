@@ -3,8 +3,14 @@
 #include "Library/Car.h"
 #include "Library/Parameters.h"
 
+#include "Library/Serial.h"
+#include "Library/ESP8266.h"
+
 void init() {
-	Car_Init();
+//	Car_Init();
+	Serial_Init();
+	ESP8266_Init();
+	ESP8266_sendCommand("AT+CWLAP\r\n");
 }
 
 
@@ -40,7 +46,7 @@ void update_auto() {
 void update_manual() {
 	// Check distance
 	checkObstacle();
-	
+
 	// Avoid from light source
 	if (LDR_Left_Value < LIGHT_THRESHOLD) {
 		turnRight(20, 0);
@@ -68,8 +74,8 @@ int main() {
 	init();
 
 	while (1) {
-		updateSensorValues();
-
-		update();
+//		updateSensorValues();
+//
+//		update();
 	}
 }
