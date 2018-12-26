@@ -10,6 +10,7 @@
 #include "Ultrasonic.h"
 #include "Trimpot.h"
 #include "LDR.h"
+#include "External.h"
 #include "Parameters.h"
 
 extern int speed;

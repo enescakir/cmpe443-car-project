@@ -21,7 +21,7 @@ void Motor_Direction_Init() {
 }
 
 void Motor_Write(uint32_t speed, uint32_t channel) {
-	PWM_Write(PWM0, channel, speed);
+	PWM_Write(PWM0, channel, abs(speed));
 }
 
 void Motor_Handle(int percentage, GPIO_TypeDef *MOTOR1, uint32_t MASK1, GPIO_TypeDef *MOTOR2, uint32_t MASK2) {
