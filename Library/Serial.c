@@ -1,8 +1,10 @@
 #include "Serial.h"
+#include "Car.h"
 
 char    *serialTransmitData     = 0;
 uint8_t serialTransmitCompleted = 0;
 char    serialReceivedCharacter = 0;
+char    serialLastCharacter = 0;
 
 void Serial_Init() {
 	//Change the function of TX and RX pins for UART.
@@ -54,6 +56,26 @@ void UART0_IRQHandler() {
 	//First if statement is for Receive Data Available interrupt.
 	if (currentInterrupt == 0x02) {
 		serialReceivedCharacter = Serial_ReadData();
+		if(serialReceivedCharacter == AUTO){
+			Serial_Write("AUTO\r\n");
+			setMode(AUTO);
+		} else if(serialReceivedCharacter == MANUEL){
+			Serial_Write("MANUEL\r\n");
+			setMode(MANUEL);
+		} else if (serialReceivedCharacter == '6') {
+			if(serialLastCharacter == '6') {
+				serialLastCharacter = 0;
+				if(mode == AUTO) {
+					Serial_Write("STARTED\r\n");
+					active = 1;
+				} else {
+					Serial_Write("NOT STARTED\r\n");
+				}
+			} else {
+				serialLastCharacter = '6';
+			}
+			
+		}
 	} else if (currentInterrupt == 0x1) {
 		//Second if statement is for THRE interrupt
 		if (*serialTransmitData > 0) {
@@ -72,4 +94,11 @@ void Serial_WriteData(char data) {
 	serialTransmitCompleted = 0;
 	Serial_UART->THR = data;
 }
+
+void Serial_Write(char* data) {
+	while(*data > 0) {
+		Serial_WriteData(*data++);
+	}
+}
+
 

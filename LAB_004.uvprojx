@@ -502,6 +502,16 @@
               <FileType>1</FileType>
               <FilePath>.\Library\Ultrasonic.c</FilePath>
             </File>
+            <File>
+              <FileName>Serial.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Library\Serial.c</FilePath>
+            </File>
+            <File>
+              <FileName>Serial.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Library\Serial.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

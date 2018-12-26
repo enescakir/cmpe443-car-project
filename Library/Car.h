@@ -11,6 +11,7 @@
 #include "Trimpot.h"
 #include "LDR.h"
 #include "External.h"
+#include "Serial.h"
 #include "Parameters.h"
 
 extern int speed;
@@ -44,6 +45,8 @@ void stopCar(void);
 void updateSensorValues(void);
 
 char toggleMode(void);
+
+void setMode(int nMode);
 
 void startEscape(void);
 

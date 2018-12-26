@@ -29,6 +29,7 @@ void Car_Init() {
 	Trimpot_Init();
 	LDR_Init();
 	External_Init();
+	Serial_Init();
 	LED_Controller(OFF, OFF, OFF, OFF, 0);
 };
 
@@ -87,6 +88,13 @@ char toggleMode(void) {
 	stopCar();
 	return mode;
 };
+
+void setMode(int nMode) {
+	stopCar();
+	active = 0;
+	mode = nMode;
+};
+
 
 void startEscape() {
 	IS_ESCAPING = 1;
