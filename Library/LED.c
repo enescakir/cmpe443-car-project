@@ -24,10 +24,10 @@ void LED_Write(uint32_t T_ON) {
 
 void LED_Controller(int frontLeft, int frontRight, int backRight, int backLeft, int isBlink) {
 	// Set ON or OFF state of LEDs
-	if (frontLeft) LED_On(LED2_PORT, LED2_MASK); else LED_Off(LED2_PORT, LED2_MASK);
-	if (frontRight) LED_On(LED1_PORT, LED1_MASK); else LED_Off(LED1_PORT, LED1_MASK);
-	if (backRight) LED_On(LED4_PORT, LED4_MASK); else LED_Off(LED4_PORT, LED4_MASK);
-	if (backLeft) LED_On(LED3_PORT, LED3_MASK); else LED_Off(LED3_PORT, LED3_MASK);
+	if (frontLeft) LED_On(LED1_PORT, LED1_MASK); else LED_Off(LED1_PORT, LED1_MASK);
+	if (frontRight) LED_On(LED2_PORT, LED2_MASK); else LED_Off(LED2_PORT, LED2_MASK);
+	if (backRight) LED_On(LED3_PORT, LED3_MASK); else LED_Off(LED3_PORT, LED3_MASK);
+	if (backLeft) LED_On(LED4_PORT, LED4_MASK); else LED_Off(LED4_PORT, LED4_MASK);
 
 	// If all LEDs are OFF, set duty cycle to 0
 	if (frontLeft + frontRight + backRight + backLeft == 0) LED_Write(0);

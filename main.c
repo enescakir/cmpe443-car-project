@@ -8,31 +8,34 @@
 
 void init() {
 	Car_Init();
-	Serial_Write("\033[2J");
+	//Serial_Write("\033[2J");
 
-	ESP8266_Init();
-	// ESP8266_sendCommand("AT+CWJAP=\"HWLAB\",\"enes12345\"\r\n");
+	//ESP8266_Init();
+	//ESP8266_sendCommand("AT+CWJAP=\"HWLAB\",\"enes12345\"\r\n");
 }
 
 
 void update_auto() {
 	// Handle joystick presses
-	if (Joystick_Center_Pressed()) active = 0;
-	else if (Joystick_Up_Pressed()) active = 1;
+	if (Joystick_Center_Pressed()) {
+		active = 0;
+		stopCar();
+	} else if (Joystick_Up_Pressed()) {
+		active = 1;
+	}
 
 	if (active) {
-		// Car is too close, stop car
-		if (distance < OBSTACLE_DISTANCE / 2) {
-			stopCar();
-			return;
+		// Check distance
+		/*
+		if (!IS_ESCAPING && distance < OBSTACLE_DISTANCE) {
+			startEscape();
+		} else if (IS_ESCAPING && distance > OBSTACLE_ESCAPE_DISTANCE && distance < ULTRASONIC_MAX_DISTANCE) {
+			endEscape();
 		}
-
-		// Car is little close, half speed
-		if (distance < OBSTACLE_DISTANCE) {
-			speed = speed / 2;
-		}
+		*/
 
 		if (LDR_Difference > DIFFERENCE_THRESHOLD) {
+			speed = TURN_SPEED;
 			if (LDR_Left_Value > LDR_Right_Value) {
 				turnLeft(LDR_Difference, 1);
 			} else {
@@ -45,18 +48,25 @@ void update_auto() {
 }
 
 void update_manual() {
-	// Check distance
-	checkObstacle();
 
-	// Avoid from light source
-	if (LDR_Left_Value < LIGHT_THRESHOLD) {
-		turnRight(20, 0);
-	} else if (LDR_Right_Value < LIGHT_THRESHOLD) {
-		turnLeft(20, 0);
-	} else if (FORWARD_FLAG) {
-		goForward();
-	} else if (BACKWARD_FLAG) {
-		goBackward();
+	if(isMoving()){
+		// Check distance
+		if (!IS_ESCAPING && distance < OBSTACLE_DISTANCE) {
+			startEscape();
+		} else if (IS_ESCAPING && distance > OBSTACLE_ESCAPE_DISTANCE && distance < ULTRASONIC_MAX_DISTANCE) {
+			endEscape();
+		}
+
+		// Avoid from light source
+		if (LDR_Left_Value < LIGHT_THRESHOLD) {
+			turnRight(20, 0);
+		} else if (LDR_Right_Value < LIGHT_THRESHOLD) {
+			turnLeft(20, 0);
+		} else if (FORWARD_FLAG) {
+			goForward();
+		} else if (BACKWARD_FLAG) {
+			goBackward();
+		}
 	}
 	// Handle joystick presses
 	if (Joystick_Center_Pressed()) stopCar();
@@ -73,25 +83,27 @@ void update() {
 
 int main() {
 	init();
+	/*
 	ESP8266_sendCommand("AT+RST\r\n");
-	wait(1000);
+	wait(2000);
 	ESP8266_sendCommand("AT+CWJAP=\"HWLAB\",\"12345678\"\r\n");
 	Serial_Write("Bagli\r\n");
+		wait(2000);
 	Serial_Write(ESP8266_readResponse());
 	Serial_Write("\r\n");
 	ESP8266_sendCommand("AT+CIFSR\r\n");
 	Serial_Write("IP1\r\n");
-	ESP8266_waitResponseEnd();
+			wait(2000);
 	char* response = ESP8266_readResponse();
 	Serial_Write(response);
 	Serial_Write("\r\n");
 	Serial_Write(esp8266Response);
 	Serial_Write("\r\n");
 	Serial_Write("IP2\r\n");
-	Serial_Write("\r\n");
+	Serial_Write("\r\n");*/
 	while (1) {
-//		updateSensorValues();
+		updateSensorValues();
 //
-//		update();
+		update();
 	}
 }

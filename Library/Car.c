@@ -48,13 +48,13 @@ void goBackward() {
 void turnRight(int rate, int flag) {
 	LED_Controller(OFF, ON, ON, OFF, 1);
 	
-	Motor_Controller(FORWARD + rate, MAX(FORWARD - rate, 0), speed);
+	Motor_Controller(FORWARD, STOP, speed);
 	if (flag) setFlags(0, 1, 0, 0);
 };
 
 void turnLeft(int rate, int flag) {
 	LED_Controller(ON, OFF, OFF, ON, 1);
-	Motor_Controller(MAX(FORWARD - rate, 0), FORWARD + rate, speed);
+	Motor_Controller(STOP, FORWARD, speed);
 	if (flag) setFlags(1, 0, 0, 0);
 };
 
@@ -69,7 +69,7 @@ void updateSensorValues(void) {
 	speed = Trimpot_Read_Data();
 
 	// Read distance from ultrasonic sensor
-	if(turnCount % 1000 == 0){
+	if(turnCount % 500 == 0){
 		distance = Ultrasonic_Get_Distance();
 		turnCount = 0;
 	}
@@ -86,6 +86,8 @@ char toggleMode(void) {
 	if (mode == AUTO) mode = MANUEL;
 	else if (mode == MANUEL) mode = AUTO;
 	stopCar();
+	active=0;
+
 	return mode;
 };
 

@@ -26,11 +26,11 @@ void Motor_Write(uint32_t speed, uint32_t channel) {
 
 void Motor_Handle(int percentage, GPIO_TypeDef *MOTOR1, uint32_t MASK1, GPIO_TypeDef *MOTOR2, uint32_t MASK2) {
 	if (percentage > 0) {
-		GPIO_PIN_Write(MOTOR1, MASK1, HIGH);
-		GPIO_PIN_Write(MOTOR2, MASK2, LOW);
-	} else if (percentage < 0) {
 		GPIO_PIN_Write(MOTOR1, MASK1, LOW);
 		GPIO_PIN_Write(MOTOR2, MASK2, HIGH);
+	} else if (percentage < 0) {
+		GPIO_PIN_Write(MOTOR1, MASK1, HIGH);
+		GPIO_PIN_Write(MOTOR2, MASK2, LOW);
 	} else if (percentage == 0) {
 		GPIO_PIN_Write(MOTOR1, MASK1, LOW);
 		GPIO_PIN_Write(MOTOR2, MASK2, LOW);

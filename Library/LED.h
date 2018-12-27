@@ -23,11 +23,11 @@
 
 // Back-right LED
 #define LED3_PORT PORT1
-#define LED3_MASK ((uint32_t) 1 << 30)
+#define LED3_MASK ((uint32_t) 1 << 31)
 
 // Back-left LED
 #define LED4_PORT PORT1
-#define LED4_MASK ((uint32_t) 1 << 31)
+#define LED4_MASK ((uint32_t) 1 << 30)
 
 typedef enum {
 	OFF = 0,
