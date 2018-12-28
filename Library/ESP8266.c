@@ -67,7 +67,15 @@ uint8_t ESP8266_waitResponseEnd() {
 			bufferIndex = esp8266ResponseStartIndex + esp8266ResponseCurrentIndex;
 			esp8266Response[esp8266ResponseCurrentIndex] = esp8266Buffer[bufferIndex];
 		}
-		if (strstr(esp8266Response, "\r\nOK")) {
+		if (strstr(esp8266Response, "*")) {
+			return 10;
+		} else if (strstr(esp8266Response, "#")) {
+			return 11;
+		}  else if (strstr(esp8266Response, "66")) {
+			return 12;
+		} else if (strstr(esp8266Response, ">")) {
+			return 7;
+		} else if (strstr(esp8266Response, "\r\nOK")) {
 			return 1;
 		} else if (strstr(esp8266Response, "\r\nFAIL")) {
 			return 2;
@@ -77,8 +85,12 @@ uint8_t ESP8266_waitResponseEnd() {
 			return 5;
 		} else if (strstr(esp8266Response, "\r\nERROR")) {
 			return 5;
+		} else if (strstr(esp8266Response, "\r\nWIFI CONNECTED")) {
+			return 5;
+		} else if (strstr(esp8266Response, "\r\nready")) {
+			return 5;
 		}
-	}
+	} 
 	return 0;
 }
 

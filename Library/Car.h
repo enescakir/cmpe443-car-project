@@ -12,6 +12,7 @@
 #include "LDR.h"
 #include "External.h"
 #include "Serial.h"
+#include "ESP8266.h"
 #include "Parameters.h"
 
 extern int speed;
@@ -52,10 +53,10 @@ void startEscape(void);
 
 void endEscape(void);
 
-void checkObstacle(void);
-
 void setFlags(int turnLeft, int turnRight, int forward, int backward);
 
 int isMoving(void);
+
+void checkWifiMode(void);
 
 #endif

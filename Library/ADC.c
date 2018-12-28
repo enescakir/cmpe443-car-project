@@ -4,13 +4,11 @@ uint32_t ADC_Last               = 0;
 uint8_t  ADC_New_Data_Available = 0;
 
 void ADC_Init(volatile uint32_t *IOCON, uint32_t IOCON_FUNC) {
-
+	//Change the function value of pin to ADC.
 	uint32_t value = *IOCON;
 	value &= ~7;
 	value |= IOCON_FUNC;
 
-	//Change the function value of pin to ADC.
-//	ANALOG_PIN_IOCON |= 0x01;
 
 	//Change the mode value of pin to mode which should be selected if Analog mode is used.
 	value &= ~(1 << 3 | 1 << 4);

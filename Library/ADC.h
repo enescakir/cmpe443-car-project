@@ -15,7 +15,7 @@ typedef struct {
 	volatile uint32_t TRM;
 } ADC_TypeDef;
 
-#define ADC_CLOCK_FREQUENCY 1000000
+#define ADC_CLOCK_FREQUENCY 3000000
 
 //Write the IOCON address of Analog Pin
 #define ANALOG_PIN_IOCON_ADDRESS    0x4002C064

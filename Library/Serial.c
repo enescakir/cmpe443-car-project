@@ -57,10 +57,8 @@ void UART0_IRQHandler() {
 	if (currentInterrupt == 0x02) {
 		serialReceivedCharacter = Serial_ReadData();
 		if(serialReceivedCharacter == AUTO){
-			Serial_Write("AUTO\r\n");
 			setMode(AUTO);
 		} else if(serialReceivedCharacter == MANUEL){
-			Serial_Write("MANUEL\r\n");
 			setMode(MANUEL);
 		} else if (serialReceivedCharacter == '6') {
 			if(serialLastCharacter == '6') {
