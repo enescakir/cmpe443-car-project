@@ -17,16 +17,16 @@ void ADC_Init(volatile uint32_t *IOCON, uint32_t IOCON_FUNC) {
 	value &= ~(1 << 7);
 
 	*IOCON = value;
-	
+
 	//Turn on ADC.
 	PCONP |= (1 << 12);
 
 	//Set the CLKDIV and make the A/D converter operational without Burst mode.
-	ADC->CR = (0 << 0)
-			  | (ADC_CLKDIV << 8)
-			  | (0 << 16)
-			  | (1 << 21)
-			  | (0 << 24);
+	ADC->CR        = (0 << 0)
+					 | (ADC_CLKDIV << 8)
+					 | (0 << 16)
+					 | (1 << 21)
+					 | (0 << 24);
 }
 
 void ADC_Start() {

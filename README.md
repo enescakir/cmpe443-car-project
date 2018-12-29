@@ -1,7 +1,51 @@
 # CMPE443 Car Project
-## R3S3RV3D
-![Logo](R3S3RV3D.png)
+<p align="center">
+    <img src="https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/car.jpg" width="50%" height="auto" align="center">
+</p>
 
+## R3S3RV3D
+<p align="center">
+    <img src="https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/R3S3RV3D.png" width="50%" height="auto" align="center">
+</p>
+
+### We were 1st place in the race.
+
+#### Team Members
+<p align="center">
+    <img src="https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/team.jpg" width="50%" height="auto" align="center">
+</p>
+
+- [Enes ÇAKIR](https://www.github.com/EnesCakir)
+- [Dilruba Reyyan Kılıç](https://www.github.com/abcdrk)
+- [Bekir Burak Aslan](https://www.github.com/bekir16)
+- [Yusuf Kalaycı](https://www.github.com/byklyci)
+
+## Links
+- [Interim Description](https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/Interim_Description.pdf) (given)
+- [Interim Report] (https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/Interim_Report.pdf)
+- You can access our *Interim* project at [first-interim](https://github.com/EnesCakir/cmpe443-car-project/tree/first-interim) branch.
+- [Final Description] (https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/Final_Description.pdf) (given)
+- [Final Report] (https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/Final_Report.pdf)
+
+## Description
+<p align="center">
+    <img src="https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/race.jpg" width="50%" height="auto" align="center">
+</p>
+
+We used 4-Wheel Robot Smart Car Chassis via LPC4088 Board and with various sensors and other components.
+
+You can set parameters via `Parameters.c` file.
+
+### WiFi
+We could not develop WiFi successfully.
+We did not use interrupt at LDR sensors.
+While transmitting data via WiFi, all the other parts of the car is blocked. 
+So polled LDR sensors and Joystick do not work.
+
+### Circuit Schema
+<p align="center">
+    <img src="https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/circuit_schema.jpg" width="50%" height="auto" align="center">
+</p>
 
 ### Pins
 | LPC4088 pin | Connection | Function | Purpose |
@@ -28,3 +72,5 @@
 |P0.5|P33|GPIO|IN3 - Right Motors|
 |P0.4|P34|GPIO|IN4 - Right Motors|
 
+### License
+CmpE443 R3S3RV3D Car Project is an open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

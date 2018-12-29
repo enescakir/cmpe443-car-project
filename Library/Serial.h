@@ -56,9 +56,9 @@ typedef struct {
 #define Serial_UART_RX_PIN_ADDRESS    0x4002C00C
 #define Serial_UART_RX_PIN    *((volatile uint32_t*)(Serial_UART_RX_PIN_ADDRESS))
 
-extern char serialReceivedCharacter;
-extern char serialLastCharacter;
-extern char *serialTransmitData;
+extern char    serialReceivedCharacter;
+extern char    serialLastCharacter;
+extern char    *serialTransmitData;
 extern uint8_t serialTransmitCompleted;
 
 void Serial_Init(void);

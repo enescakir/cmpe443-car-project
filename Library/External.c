@@ -16,6 +16,6 @@ void External_Init() {
 
 void EINT0_IRQHandler() {
 	// Clear interrupt for EINT0
- 	EXT->EXTINT |= (1 << 0);
+	EXT->EXTINT |= (1 << 0);
 	toggleMode();
 }

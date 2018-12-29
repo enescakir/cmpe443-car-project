@@ -29,7 +29,7 @@ extern uint32_t LDR_Difference;
 typedef enum {
 	AUTO   = '#',
 	MANUEL = '*',
-}        Car_Mode;
+}               Car_Mode;
 
 void Car_Init(void);
 

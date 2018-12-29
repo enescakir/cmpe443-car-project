@@ -27,7 +27,7 @@ void update_auto() {
 			endEscape();
 		}
 
-		if(!IS_ESCAPING){
+		if (!IS_ESCAPING) {
 			if (LDR_Difference > DIFFERENCE_THRESHOLD) {
 				if (LDR_Left_Value > LDR_Right_Value) {
 					turnLeft(LDR_Difference, 1);
@@ -43,7 +43,7 @@ void update_auto() {
 
 void update_manual() {
 
-	if(isMoving()){
+	if (isMoving()) {
 		// Check distance
 		if (!IS_ESCAPING && FORWARD_FLAG && distance < OBSTACLE_DISTANCE) {
 			startEscape();
@@ -57,7 +57,7 @@ void update_manual() {
 		} else if (FORWARD_FLAG && LDR_Right_Value < LIGHT_THRESHOLD) {
 			turnLeft(20, 0);
 		} else if (FORWARD_FLAG) {
-			goForward() ;
+			goForward();
 		} else if (BACKWARD_FLAG) {
 			goBackward();
 		}
@@ -77,13 +77,13 @@ void update() {
 
 int main() {
 	init();
-		
+
 	while (1) {
-		if(WIFI_ENABLED){
+		if (WIFI_ENABLED) {
 			checkWifiMode();
 		}
 		updateSensorValues();
-		
+
 		update();
 	}
 }

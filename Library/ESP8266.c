@@ -71,7 +71,7 @@ uint8_t ESP8266_waitResponseEnd() {
 			return 10;
 		} else if (strstr(esp8266Response, "#")) {
 			return 11;
-		}  else if (strstr(esp8266Response, "66")) {
+		} else if (strstr(esp8266Response, "66")) {
 			return 12;
 		} else if (strstr(esp8266Response, ">")) {
 			return 7;
@@ -90,7 +90,7 @@ uint8_t ESP8266_waitResponseEnd() {
 		} else if (strstr(esp8266Response, "\r\nready")) {
 			return 5;
 		}
-	} 
+	}
 	return 0;
 }
 
