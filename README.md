@@ -1,8 +1,4 @@
 # CMPE443 Car Project
-<p align="center">
-    <img src="https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/car.jpg" width="50%" height="auto" align="center">
-</p>
-
 ## R3S3RV3D
 <p align="center">
     <img src="https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/R3S3RV3D.png" width="50%" height="auto" align="center">
@@ -11,7 +7,7 @@
 ### We were 1st place in the race.
 
 #### Team Members
-<p align="center">
+<p align="left">
     <img src="https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/team.jpg" width="50%" height="auto" align="center">
 </p>
 
@@ -22,12 +18,15 @@
 
 ## Links
 - [Interim Description](https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/Interim_Description.pdf) (given)
-- [Interim Report] (https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/Interim_Report.pdf)
+- [Interim Report](https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/Interim_Report.pdf)
 - You can access our *Interim* project at [first-interim](https://github.com/EnesCakir/cmpe443-car-project/tree/first-interim) branch.
-- [Final Description] (https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/Final_Description.pdf) (given)
-- [Final Report] (https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/Final_Report.pdf)
+- [Final Description](https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/Final_Description.pdf) (given)
+- [Final Report](https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/Final_Report.pdf)
 
 ## Description
+<p align="center">
+    <img src="https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/car.jpg" width="50%" height="auto" align="center">
+</p>
 <p align="center">
     <img src="https://github.com/EnesCakir/cmpe443-car-project/raw/master/assets/race.jpg" width="50%" height="auto" align="center">
 </p>
